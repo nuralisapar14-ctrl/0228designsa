@@ -3,51 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High Stakes Comic - Project Overview</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; color: #333; }
-        header { text-align: center; padding: 20px; background-color: #f4f4f4; }
-        .container { max-width: 800px; margin: auto; }
-        img { display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .authors { background: #eef; padding: 15px; border-left: 5px solid #336; margin-top: 30px; }
-        footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #777; }
-    </style>
+    <title>Odds Against Life | Kickstarter Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    <img src="logo.png" alt="High Stakes Logo" width="200">
-    <h1>High Stakes Comic</h1>
-    <p>Digital storytelling against gaming addiction</p>
-</header>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Odds<span>Against</span>Life</div>
+            <nav>
+                <ul>
+                    <li><a href="#description">Project</a></li>
+                    <li><a href="#requirements">Requirements</a></li>
+                    <li><a href="#prototype">Prototype</a></li>
+                    <li><a href="#authors">Authors</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<div class="container">
-    <section id="overview">
-        <h2>Project Overview</h2>
-        <p>Our project is aimed at raising awareness about the risks of gaming addiction. We are creating an interactive comic that helps players see the consequences of their decisions.</p>
-        
-        <h3>Our First Sketch</h3>
-        <img src="sketch.jpeg" alt="Comic draft" style="max-width: 100%; height: auto;">
+    <section class="hero">
+        <div class="container hero-text">
+            <h1>A Visual Shield Against Casino Addiction</h1>
+            <p>Support our Kickstarter product development to help save lives from gambling debt.</p>
+            <a href="#description" class="btn">Discover the Project</a>
+        </div>
     </section>
 
-    <section class="authors">
-        <h2>About the Authors</h2>
-        <ul>
-            <li><strong>Abdualiev Timur</strong> — Design & Research</li>
-            <li><strong>Sapar Nurali</strong> — Programming & Scripting</li>
-        </ul>
-        <p>Our team combines design and programming skills to create socially significant digital content.</p>
+    <section id="description" class="container section">
+        <h2 class="section-title">1) Project Description</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>What our product is</h3>
+                <p>We are creating a high-quality, immersive digital comic book that tells the raw and emotional story of a person falling into, and fighting, casino addiction.</p>
+                
+                <h3>What problem it solves & How it works</h3>
+                <p><strong>The Problem:</strong> Over 60 million people worldwide suffer from gambling addiction, which ruins families and leads to severe debt or loss of life.</p>
+                <p><strong>The Solution:</strong> The comic acts as a preventative psychological tool. By visualizing the devastating consequences *before* a person places their first bet, we create an emotional deterrent. It solves the problem through empathy and education rather than boring statistics.</p>
+            </div>
+            <div class="card dark-card">
+                <h3>Why this problem is important</h3>
+                <p>Gambling addiction is a silent killer. People often don't realize they are trapped until it's too late. Intervening early with relatable media can literally save lives.</p>
+                
+                <h3>What makes our idea unique</h3>
+                <p>Unlike clinical brochures or generic warnings, our project uses engaging visual storytelling. We speak the language of gamers and youth, turning a serious psychological warning into a captivating artistic journey.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="tech">
-        <h2>Technologies</h2>
-        <p>The project was developed using HTML5, CSS3, and published via GitHub Pages.</p>
+    <section id="requirements" class="bg-light section">
+        <div class="container">
+            <h2 class="section-title">2) & 3) Requirements</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Functional Requirements</h3>
+                    <ul class="check-list">
+                        <li><strong>Vertical Scrolling:</strong> Users can smoothly scroll top-to-bottom to read the comic chapters.</li>
+                        <li><strong>Interactive Zoom:</strong> Readers can click or tap to zoom in on specific artwork details.</li>
+                        <li><strong>Responsive Design:</strong> The comic viewer adapts perfectly to mobile phones and desktop screens.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Technical Requirements</h3>
+                    <ul class="check-list">
+                        <li><strong>Programming Languages:</strong> HTML5 and CSS3 (No JavaScript required for base layout).</li>
+                        <li><strong>Version Control:</strong> Hosted on a public GitHub repository.</li>
+                        <li><strong>Hosting Platform:</strong> Deployed live using GitHub Pages.</li>
+                        <li><strong>Design Tools:</strong> Digital drawing software for sketches.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
-</div>
 
-<footer>
-    <p>&copy; 2024 High Stakes Team. Built with GitHub.</p>
-</footer>
+    <section id="prototype" class="container section">
+        <h2 class="section-title">4) Sketches / Prototype Design</h2>
+        <div class="prototype-container">
+            <img src="sketch.jpg" alt="Hand-drawn storyboard sketches" class="prototype-img">
+            <p class="caption">First design sketches and character concepts visualizing the psychological trap of casinos.</p>
+        </div>
+    </section>
+
+    <section id="authors" class="bg-light section">
+        <div class="container">
+            <h2 class="section-title">5) About the Authors</h2>
+            
+            <div class="motivation-box">
+                <h3>Our Motivation</h3>
+                <p>We both love gaming and drawing. However, we want to use our skills for a meaningful cause: helping people become independent of casino addiction and preventing tragic outcomes. This project is our way of making a positive impact.</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="team-member card">
+                    <img src="timur.jpg" alt="Timur Abdualiev" class="profile-pic">
+                    <h3>Abdualiev Timur</h3>
+                    <p class="role">Researcher, Artist & Designer</p>
+                    <p><strong>Skills & Strengths:</strong> Excellent at deep research, digital drawing, and conceptualizing UI design. Timur ensures the visual impact is powerful and accurate.</p>
+                </div>
+                <div class="team-member card">
+                    <img src="nurali.jpg" alt="Sapar Nurali" class="profile-pic">
+                    <h3>Sapar Nurali</h3>
+                    <p class="role">Programmer & Process Controller</p>
+                    <p><strong>Skills & Strengths:</strong> Skilled in coding, scripting, and project management. Nurali oversees the digital implementation and ensures smooth workflow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container section">
+        <h2 class="section-title">6) Additional Project Information</h2>
+        <div class="grid-3">
+            <div class="card info-card">
+                <h4>Timeline of Development</h4>
+                <p>Week 1: Concept & Homepage. Week 2-4: Storyboarding. Month 2: Digital Inking. Month 3: Final Launch.</p>
+            </div>
+            <div class="card info-card">
+                <h4>Expected Future Improvements</h4>
+                <p>Adding multi-language support, a dark/light reading mode, and an interactive "choose your path" ending.</p>
+            </div>
+            <div class="card info-card">
+                <h4>Charity Component</h4>
+                <p>If our Kickstarter exceeds its goal, 15% of all extra funds will be donated to gambling addiction recovery centers.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Odds Against Life © 2026. A Kickstarter Product Development Project.</p>
+            <p>Deployed via <a href="https://github.com" style="color: #e74c3c;">GitHub Pages</a></p>
+        </div>
+    </footer>
 
 </body>
 </html>
