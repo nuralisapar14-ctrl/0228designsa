@@ -1,64 +1,172 @@
-/* Visual Identity: Colors & Typography [cite: 55] */
+/* 1) VISUAL IDENTITY: Colors & Typography */
 :root {
-    --primary: #e74c3c;
+    --primary: #e74c3c; 
     --dark: #1a1a1a;
     --gray: #f4f4f4;
     --white: #ffffff;
+    --text: #333;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 body { 
     font-family: 'Open Sans', sans-serif; 
     line-height: 1.6; 
-    color: #333;
+    color: var(--text);
     background: var(--white);
 }
 
-.container { width: 85%; max-width: 1100px; margin: auto; }
-.section { padding: 60px 0; }
-.bg-gray { background: var(--gray); }
+.container { 
+    width: 85%; 
+    max-width: 1100px; 
+    margin: auto; 
+}
 
-/* Header & Logo [cite: 56] */
+.section { 
+    padding: 60px 0; 
+}
+
+.bg-gray { 
+    background: var(--gray); 
+}
+
+/* HEADER & LOGO */
 header { 
     background: var(--dark); 
     color: var(--white); 
-    padding: 20px 0; 
-    position: sticky; top: 0; z-index: 100;
+    padding: 15px 0; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
-.nav-box { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: bold; }
-.logo span { color: var(--primary); }
-nav ul { display: flex; list-style: none; gap: 20px; }
-nav ul li a { color: var(--white); text-decoration: none; font-weight: 600; }
 
-/* Hero [cite: 57] */
+.nav-box { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* Контейнер для логотипа png */
+.logo img {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+nav ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 20px; 
+}
+
+nav ul li a { 
+    color: var(--white); 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover { 
+    color: var(--primary); 
+}
+
+/* HERO SECTION */
 .hero { 
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1596838132731-dd96a34407b9?auto=format&fit=crop&w=1200');
-    background-size: cover; background-position: center;
-    height: 60vh; display: flex; align-items: center; justify-content: center;
-    color: var(--white); text-align: center;
-}
-.hero h1 { font-size: 3rem; margin-bottom: 15px; font-family: 'Montserrat', sans-serif; }
-.btn { background: var(--primary); color: var(--white); padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
-
-/* Grid Layout [cite: 59] */
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.card { background: var(--white); padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-.dark { background: var(--dark); color: var(--white); }
-.section-title { margin-bottom: 30px; border-left: 5px solid var(--primary); padding-left: 15px; font-family: 'Montserrat', sans-serif; }
-
-/* Prototype & Team [cite: 43, 47] */
-.img-fluid { width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-.avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid var(--primary); }
-.team { text-align: center; }
-.motivation { background: var(--dark); color: var(--white); padding: 30px; border-radius: 10px; margin-bottom: 30px; }
-
-/* Mobile Friendly [cite: 61] */
-@media (max-width: 768px) {
-    .grid, .grid-3 { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2rem; }
+    background-size: cover; 
+    background-position: center;
+    height: 60vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    color: var(--white); 
+    text-align: center;
 }
 
-footer { background: var(--dark); color: #888; text-align: center; padding: 40px 0; margin-top: 40px; }
+.hero h1 { 
+    font-size: 3rem; 
+    margin-bottom: 15px; 
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.btn { 
+    display: inline-block;
+    background: var(--primary); 
+    color: var(--white); 
+    padding: 12px 30px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #c0392b;
+}
+
+/* GRID LAYOUTS */
+.grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px; 
+    margin-top: 20px; 
+}
+
+.grid-3 { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+}
+
+.card { 
+    background: var(--white); 
+    padding: 30px; 
+    border-radius: 10px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+}
+
+.dark { 
+    background: var(--dark); 
+    color: var(--white); 
+}
+
+.section-title { 
+    margin-bottom: 30px; 
+    border-left: 5px solid var(--primary); 
+    padding-left: 15px; 
+    font-family: 'Montserrat', sans-serif; 
+}
+
+/* PROTOTYPE PHOTO (sketch.jpg) */
+.prototype-box {
+    text-align: center;
+}
+
+.img-fluid { 
+    width: 100%; 
+    max-width: 900px;
+    border-radius: 10px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+}
+
+.caption { 
+    margin-top: 15px; 
+    font-style: italic; 
+    color: #666; 
+}
+
+/* TEAM PHOTOS (timur.jpg & nurali.jpg) */
+.avatar { 
+    width: 120px; 
+    height: 120px; 
+    border-radius: 50%; 
+    object-fit:
