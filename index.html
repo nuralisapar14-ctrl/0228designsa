@@ -14,13 +14,14 @@
     <header>
         <div class="container nav-box">
             <div class="logo-wrapper">
-                <img src="logo.png" alt="Logo" class="main-logo">
+                <img src="logo.png" alt="Logo" class="main-logo" onerror="this.style.display='none'">
                 <span class="logo-text">ODDS AGAINST LIFE</span>
             </div>
             <nav>
                 <ul>
                     <li><a href="#mission">Mission</a></li>
-                    <li><a href="#prototype">Prototype</a></li>
+                    <li><a href="#functionality">Functionality</a></li>
+                    <li><a href="#tech">Tech</a></li>
                     <li><a href="#interview">Expert View</a></li>
                     <li><a href="#team">Team</a></li>
                 </ul>
@@ -32,7 +33,7 @@
         <div class="container">
             <h1>Odds Against Life: A Digital Intervention</h1>
             <p>A 16-page immersive Manga experience designed to combat gambling addiction among youth.</p>
-            <a href="#prototype" class="btn">View Prototype</a>
+            <a href="#functionality" class="btn">View Prototype</a>
         </div>
     </section>
 
@@ -49,34 +50,79 @@
         <div class="grid">
             <div class="card">
                 <h3>Our "Why"</h3>
-                <p>Our motivation is to showcase **high-level teamwork** and **artistic mastery** while tackling a critical social issue. We aim to reach our peers through the visual power of Manga.</p>
+                <p>Our motivation is to showcase **high-level teamwork** and **artistic mastery** while tackling a critical social issue. We aim to reach our peers through the visual power of Manga, helping them understand and avoid the trap of gambling addiction.</p>
             </div>
             <div class="card dark">
                 <h3>The Solution</h3>
-                <p>Using an interactive 16-page narrative as a "mental vaccine". We show the emotional and psychological consequences of gambling choices.</p>
+                <p>By using an interactive 16-page narrative, we provide a "mental vaccine". We don't just lecture; we show the emotional and psychological consequences of every choice made by the protagonist.</p>
             </div>
         </div>
     </section>
 
-    <section id="prototype" class="bg-gray section">
+    <section id="functionality" class="bg-gray section">
         <div class="container">
-            <h2 class="section-title">2, 3 & 4) Functionality & Prototype</h2>
+            <h2 class="section-title">2) Full Functionality</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Technical Strategy</h3>
+                    <h3>Interactive Webtoon Reader</h3>
+                    <p>The core functionality of our project is the custom-built vertical scrolling interface. Instead of a static PDF, we created an interactive digital environment.</p>
                     <ul class="feature-list">
-                        <li><strong>B&W Manga Style:</strong> Raw emotion without color distractions.</li>
-                        <li><strong>Webtoon Flow:</strong> Optimized vertical scrolling for mobile.</li>
-                        <li><strong>Contrast Logic:</strong> Dual-ending system for reflection.</li>
+                        <li><strong>Seamless Vertical Scroll:</strong> Mimics natural social media behavior, keeping teens engaged.</li>
+                        <li><strong>Live Progress Tracking:</strong> A dynamic red progress bar at the top visually indicates how deep the user is into the story.</li>
+                        <li><strong>Intuitive UX:</strong> No complex menus; the user simply scrolls to experience the narrative flow.</li>
                     </ul>
                 </div>
                 <div class="card">
                     <div class="webtoon-viewer">
-                        <img src="page1.jpg" alt="Intro">
-                        <img src="page8.jpg" alt="Conflict">
-                        <img src="ending.jpg" alt="The Choice">
-                        <div class="demo-overlay">Scroll to see the narrative flow</div>
+                        <img src="page1.jpg" alt="Intro" onerror="this.style.display='none'">
+                        <img src="page8.jpg" alt="Conflict" onerror="this.style.display='none'">
+                        <img src="ending.jpg" alt="The Choice" onerror="this.style.display='none'">
+                        <div class="demo-overlay">Interactive Digital Prototype</div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sketches" class="container section">
+        <h2 class="section-title">3) Final Sketches & Art Prototype</h2>
+        <div class="grid-3">
+            <div class="card dark">
+                <h3>Visual Identity</h3>
+                <p>We chose a <strong>Traditional B&W Manga Style</strong>. The absence of color intentionally strips away the "glamour" of casinos, forcing the reader to focus on the raw psychological distress and facial expressions.</p>
+            </div>
+            <div class="card dark">
+                <h3>The 16-Page Arc</h3>
+                <p>The prototype consists of 16+ carefully storyboarded panels. The pacing is designed to start slow (the illusion of winning) and rapidly accelerate into chaos (the addiction trap).</p>
+            </div>
+            <div class="card dark">
+                <h3>Dual-Ending Concept</h3>
+                <p>The final sketches reveal a <strong>Bifurcation Point</strong>. The 16th panel splits the narrative into two visual realities, empowering the reader to reflect on the consequences of their choices.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="bg-gray section">
+        <div class="container">
+            <h2 class="section-title">4) Technical Requirements</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Frontend Architecture</h3>
+                    <p>The project is built using pure, lightweight web technologies to ensure maximum accessibility across all devices without requiring app downloads.</p>
+                    <ul>
+                        <li><strong>Semantic HTML5:</strong> For structured and accessible content delivery.</li>
+                        <li><strong>Custom CSS3:</strong> For responsive grid layouts, custom scrollbars, and interactive hover states.</li>
+                        <li><strong>Vanilla JavaScript:</strong> Implemented for real-time DOM manipulation (the scroll progress bar).</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Cross-Platform Optimization</h3>
+                    <p>We adhered to strict technical constraints to ensure the comic loads instantly:</p>
+                    <ul>
+                        <li><strong>Responsive Design:</strong> Fluid containers that adapt from wide desktop monitors to narrow mobile screens.</li>
+                        <li><strong>Asset Scaling:</strong> A5 manga pages are digitally optimized via scaling algorithms to prevent pixelation.</li>
+                        <li><strong>Viewport Constraints:</strong> The custom `overflow-y` viewer protects the main page layout from breaking.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -88,16 +134,16 @@
             <div class="card dark scroll-box">
                 <h3>Insights from Almas (Project Sponsor)</h3>
                 <div class="qa">
-                    <p><strong>Q: Why use Manga instead of a poster?</strong></p>
-                    <p><em>Almas:</em> "Engagement. A 16-page arc allows the audience to live through the character's stress."</p>
+                    <p><strong>Q: Why use Manga instead of a traditional poster?</strong></p>
+                    <p><em>Almas:</em> "Engagement is key. A 16-page arc allows the audience to live through the character's stress. It makes the warning personal rather than theoretical."</p>
                 </div>
                 <div class="qa">
-                    <p><strong>Q: Is the Black & White style effective?</strong></p>
-                    <p><em>Almas:</em> "Yes. It removes the 'false glamour' and focuses on the grim reality."</p>
+                    <p><strong>Q: Is the Black & White style effective for this topic?</strong></p>
+                    <p><em>Almas:</em> "Yes. It removes the 'false glamour' of gambling and forces the reader to focus on the grim psychological reality."</p>
                 </div>
                 <div class="qa">
-                    <p><strong>Q: What is the most important lesson?</strong></p>
-                    <p><em>Almas:</em> "The realization of choice. Your parallel endings are powerful tools for reflection."</p>
+                    <p><strong>Q: What is the most important lesson for the reader?</strong></p>
+                    <p><em>Almas:</em> "The realization of choice. Your parallel endings show that recovery is possible, but the 'trap' is devastating."</p>
                 </div>
             </div>
             <div class="card">
@@ -105,8 +151,8 @@
                 <p>Based on our interview, we prioritized:</p>
                 <ul>
                     <li><strong>Emotional Close-ups:</strong> To build empathy.</li>
-                    <li><strong>Heavy Inking:</strong> For a suffocating atmosphere.</li>
-                    <li><strong>Mobile UX:</strong> For instant accessibility.</li>
+                    <li><strong>Heavy Inking:</strong> To create a "suffocating" atmosphere in the addiction scenes.</li>
+                    <li><strong>Mobile Optimization:</strong> For instant accessibility.</li>
                 </ul>
             </div>
         </div>
@@ -120,13 +166,13 @@
                     <img src="timur.jpg" alt="Timur" class="avatar">
                     <h3>Abdualiev Timur</h3>
                     <p class="role">Lead Illustrator & Narrative Architect</p>
-                    <p>The "brain" and screenwriter. Timur specializes in <strong>traditional Manga ink-work</strong>, managing character designs and 16+ core panels.</p>
+                    <p>The "brain" and primary screenwriter. Timur manages character archetypes and storyboards. He specializes in <strong>traditional Manga ink-work</strong>, focusing on creating 16+ intense, uncolored panels to deliver raw impact.</p>
                 </div>
                 <div class="card team">
                     <img src="nurali.jpg" alt="Nurali" class="avatar">
                     <h3>Sapar Nurali</h3>
                     <p class="role">Lead Developer & Creative Assistant</p>
-                    <p>The technical engine. Nurali handles <strong>web architecture and programming</strong>. He also assists in inking panels, combining Anime passion with coding.</p>
+                    <p>The technical engine behind the site. Nurali handles <strong>web architecture and programming</strong>. He also contributes to the art by inking panels with traditional pens, combining his love for Anime with coding expertise.</p>
                 </div>
             </div>
         </div>
