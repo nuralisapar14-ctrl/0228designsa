@@ -1,8 +1,25 @@
-:root { --primary: #e63946; --dark: #1d3557; --light: #f8f9fa; --accent: #457b9d; }
-body { font-family: 'Open Sans', sans-serif; margin: 0; color: #333; line-height: 1.6; scroll-behavior: smooth; }
-.container { width: 90%; max-width: 1100px; margin: auto; }
+:root { 
+    --primary: #e63946; 
+    --dark: #1d3557; 
+    --light: #f8f9fa; 
+    --accent: #457b9d; 
+}
 
-/* FIX LOGO: Жесткий контроль размера */
+body { 
+    font-family: 'Open Sans', sans-serif; 
+    margin: 0; 
+    color: #333; 
+    line-height: 1.6; 
+    scroll-behavior: smooth; 
+}
+
+.container { 
+    width: 90%; 
+    max-width: 1100px; 
+    margin: auto; 
+}
+
+/* Header & Logo */
 .logo-wrapper { 
     display: flex; 
     align-items: center; 
@@ -10,9 +27,9 @@ body { font-family: 'Open Sans', sans-serif; margin: 0; color: #333; line-height
 }
 
 .main-logo { 
-    height: 45px;      /* Высота логотипа */
-    width: auto;       /* Ширина подстроится сама */
-    max-width: 150px;  /* На всякий случай ограничиваем ширину */
+    height: 45px; 
+    width: auto; 
+    max-width: 150px; 
     display: block; 
     object-fit: contain;
 }
@@ -25,42 +42,234 @@ body { font-family: 'Open Sans', sans-serif; margin: 0; color: #333; line-height
     letter-spacing: 1px;
 }
 
-/* UI Elements */
-.progress-container { position: fixed; top: 0; z-index: 2000; width: 100%; height: 5px; }
-.progress-bar { height: 5px; background: var(--primary); width: 0%; transition: 0.1s; }
-header { background: var(--dark); color: white; padding: 10px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-.nav-box { display: flex; justify-content: space-between; align-items: center; }
-nav ul { list-style: none; display: flex; gap: 15px; margin: 0; }
-nav a { color: white; text-decoration: none; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; transition: 0.3s; }
-nav a:hover { color: var(--primary); }
+header { 
+    background: var(--dark); 
+    color: white; 
+    padding: 10px 0; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+}
 
-/* Hero */
-.hero { background: linear-gradient(rgba(29,53,87,0.9), rgba(29,53,87,0.9)), url('hero.jpg'); padding: 80px 0; text-align: center; color: white; }
-.hero h1 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 10px; }
-.btn { background: var(--primary); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; }
+.nav-box { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+nav ul { 
+    list-style: none; 
+    display: flex; 
+    gap: 15px; 
+    margin: 0; 
+    padding: 0;
+}
+
+nav a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.75rem; 
+    text-transform: uppercase; 
+    transition: 0.3s; 
+}
+
+nav a:hover { 
+    color: var(--primary); 
+}
+
+/* UI Elements */
+.progress-container { 
+    position: fixed; 
+    top: 0; 
+    z-index: 2000; 
+    width: 100%; 
+    height: 5px; 
+}
+
+.progress-bar { 
+    height: 5px; 
+    background: var(--primary); 
+    width: 0%; 
+    transition: 0.1s; 
+}
+
+.btn { 
+    background: var(--primary); 
+    color: white; 
+    padding: 12px 30px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    display: inline-block; 
+    transition: 0.3s; 
+}
+
+.btn:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(230,57,70,0.4); 
+}
 
 /* Sections */
-.section { padding: 60px 0; }
-.bg-gray { background: var(--light); }
-.section-title { text-align: center; font-family: 'Montserrat', sans-serif; margin-bottom: 40px; font-size: 1.8rem; }
+.hero { 
+    background: linear-gradient(rgba(29,53,87,0.9), rgba(29,53,87,0.9)), url('hero.jpg'); 
+    padding: 80px 0; 
+    text-align: center; 
+    color: white; 
+}
 
-/* Grid */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; text-align: center; }
-.card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-.card.dark { background: var(--dark); color: white; }
-.stat-card h2 { color: var(--primary); font-size: 3rem; margin: 0; }
+.hero h1 { 
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 2.8rem; 
+    margin: 0 0 15px; 
+}
 
-/* Viewer */
-.webtoon-viewer { height: 400px; overflow-y: auto; border: 8px solid #222; border-radius: 20px; background: #000; }
-.webtoon-viewer img { width: 100%; display: block; }
-.demo-overlay { padding: 15px; color: #555; text-align: center; font-size: 0.8rem; font-style: italic; }
+.section { 
+    padding: 60px 0; 
+}
+
+.bg-gray { 
+    background: var(--light); 
+}
+
+.section-title { 
+    text-align: center; 
+    font-family: 'Montserrat', sans-serif; 
+    margin-bottom: 40px; 
+    font-size: 1.8rem; 
+    position: relative;
+}
+
+.section-title::after { 
+    content: ''; 
+    display: block; 
+    width: 50px; 
+    height: 3px; 
+    background: var(--primary); 
+    margin: 10px auto; 
+}
+
+/* Grids & Cards */
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px; 
+}
+
+.grid-3 { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; 
+}
+
+.card { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 12px; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+    transition: 0.3s; 
+}
+
+.card.dark { 
+    background: var(--dark); 
+    color: white; 
+}
+
+.stat-card {
+    text-align: center;
+}
+
+.stat-card h2 { 
+    color: var(--primary); 
+    font-size: 3rem; 
+    margin: 0; 
+}
+
+.feature-list {
+    padding-left: 20px;
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+}
+
+/* Webtoon Viewer */
+.webtoon-viewer { 
+    height: 400px; 
+    overflow-y: auto; 
+    border: 8px solid #222; 
+    border-radius: 20px; 
+    background: #000; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+}
+
+.webtoon-viewer img { 
+    width: 100%; 
+    display: block; 
+}
+
+.demo-overlay { 
+    padding: 15px; 
+    color: #555; 
+    text-align: center; 
+    font-size: 0.8rem; 
+    font-style: italic; 
+}
+
+/* Custom Scrollbar for Viewer */
+.webtoon-viewer::-webkit-scrollbar {
+    width: 8px;
+}
+.webtoon-viewer::-webkit-scrollbar-track {
+    background: #111;
+}
+.webtoon-viewer::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
 
 /* Team */
-.team { text-align: center; }
-.avatar { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; filter: grayscale(100%); transition: 0.5s; border: 4px solid var(--accent); margin-bottom: 15px; }
-.team:hover .avatar { filter: grayscale(0%); transform: scale(1.05); border-color: var(--primary); }
-.role { font-weight: bold; color: var(--primary); font-size: 0.85rem; }
+.team { 
+    text-align: center; 
+}
 
-.scroll-box { max-height: 350px; overflow-y: auto; padding-right: 10px; }
-footer { background: var(--dark); color: white; text-align: center; padding: 30px; }
+.avatar { 
+    width: 110px; 
+    height: 110px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    filter: grayscale(100%); 
+    transition: 0.5s; 
+    border: 4px solid var(--accent); 
+    margin-bottom: 15px; 
+}
+
+.team:hover .avatar { 
+    filter: grayscale(0%); 
+    transform: scale(1.05); 
+    border-color: var(--primary); 
+}
+
+.role { 
+    font-weight: bold; 
+    color: var(--primary); 
+    font-size: 0.85rem; 
+    margin-bottom: 10px; 
+    display: block; 
+}
+
+/* Misc */
+.scroll-box { 
+    max-height: 350px; 
+    overflow-y: auto; 
+    padding-right: 10px; 
+}
+
+footer { 
+    background: var(--dark); 
+    color: white; 
+    text-align: center; 
+    padding: 30px; 
+    font-size: 0.9rem; 
+}
