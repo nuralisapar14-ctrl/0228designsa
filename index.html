@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odds Against Life | Alpha Version</title>
+    <title>Odds Against Life | Alpha</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -19,9 +19,9 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#about">О проекте</a></li>
-                    <li><a href="#reader">Комикс</a></li>
-                    <li><a href="#tech">Разработка</a></li>
+                    <li><a href="#about">Миссия</a></li>
+                    <li><a href="#reader">Чтение</a></li>
+                    <li><a href="#tech">Логика</a></li>
                     <li><a href="#team">Авторы</a></li>
                 </ul>
             </nav>
@@ -29,12 +29,12 @@
     </header>
 
     <section id="about" class="hero">
-        <div class="container">
+        <div class="content-box">
             <h1>Odds Against Life</h1>
-            <p class="subtitle">Интерактивная веб-манга против лудомании</p>
+            <p class="subtitle">Интерактивная манга против зависимости</p>
             <p class="mission-text">
-                Наша цель — использовать визуальное искусство для борьбы с игровой зависимостью среди молодежи. 
-                Это альфа-версия продукта, сфокусированная на функциональности и механике чтения.
+                Цифровая интервенция, разработанная для наглядной демонстрации последствий азартных игр. 
+                Это Альфа-версия (прототип), фокусирующаяся на механике вертикального чтения.
             </p>
             <a href="#reader" class="btn">Начать чтение</a>
         </div>
@@ -42,73 +42,76 @@
 
     <section id="reader" class="bg-gray section">
         <div class="container">
-            <h2 class="section-title">Альфа-версия продукта</h2>
+            <h2 class="section-title">Alpha Version: Manga Reader</h2>
             
             <div id="page-counter">
-                Прогресс чтения: <span id="current-page">1</span> / 7 панелей
+                Просмотрено: <span id="current-page">1</span> / 7 панелей
             </div>
 
             <div class="webtoon-viewer">
-                <img src="page1.jpg" alt="Панель 1">
-                <img src="page2.jpg" alt="Панель 2">
-                <img src="page3.jpg" alt="Панель 3">
-                <img src="page4.jpg" alt="Панель 4">
-                <img src="page5.jpg" alt="Панель 5">
-                <img src="page6.jpg" alt="Панель 6">
-                <img src="page7.jpg" alt="Панель 7">
-                <div class="demo-overlay">Конец превью альфа-версии</div>
+                <img src="page1.jpg" alt="P1">
+                <img src="page2.jpg" alt="P2">
+                <img src="page3.jpg" alt="P3">
+                <img src="page4.jpg" alt="P4">
+                <img src="page5.jpg" alt="P5">
+                <img src="page6.jpg" alt="P6">
+                <img src="page7.jpg" alt="P7">
+                <div class="demo-overlay">Конец превью Альфа-версии</div>
             </div>
         </div>
     </section>
 
     <section id="tech" class="container section">
-        <h2 class="section-title">Техническая часть (Пункт №3)</h2>
+        <h2 class="section-title">System Logic & Development</h2>
         <div class="grid">
             <div class="card dark">
-                <h3>Логика системы</h3>
-                <p>Мы внедрили <strong>Viewport-relative scaling</strong>. Картинки адаптируются под ширину экрана, сохраняя пропорции, что критично для мобильного чтения[cite: 1, 21].</p>
+                <h3>Development Evidence</h3>
+                <p><strong>Stack:</strong> HTML5, CSS3 Grid/Flex, Vanilla JavaScript.</p>
+                <p><strong>Feature:</strong> Динамический трекинг прогресса чтения через расчет высоты вьюпорта.</p>
             </div>
             <div class="card dark">
-                <h3>Технологии</h3>
-                <p>Использованы <strong>HTML5, CSS3 и Vanilla JavaScript</strong>. Хостинг и контроль версий осуществляются через <strong>GitHub</strong>[cite: 1, 26].</p>
+                <h3>Challenges Solved</h3>
+                <p>Проблема адаптации широкоформатных панелей под мобильные экраны решена с помощью <code>width: 100%</code> и автоматического масштабирования высоты.</p>
             </div>
         </div>
     </section>
 
     <section id="team" class="bg-gray section">
         <div class="container">
-            <h2 class="section-title">Авторы проекта</h2>
+            <h2 class="section-title">Команда проекта</h2>
             <div class="grid">
                 <div class="card team">
                     <img src="timur.jpg" alt="Timur" class="avatar">
                     <h3>Abdualiev Timur</h3>
                     <p class="role">Lead Illustrator</p>
-                    <p>Ответственный за сюжетную линию и отрисовку 16 панелей манги.</p>
+                    <p>Создание визуального стиля и раскадровка 16 панелей.</p>
                 </div>
                 <div class="card team">
                     <img src="nurali.jpg" alt="Nurali" class="avatar">
                     <h3>Sapar Nurali</h3>
                     <p class="role">Lead Developer</p>
-                    <p>Разработка веб-архитектуры, логики скроллинга и технической документации.</p>
+                    <p>Архитектура сайта, JS-логика и деплой на GitHub Pages.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Odds Against Life | Alpha Submission [cite: 1, 50]</p>
+        <p>© 2026 Odds Against Life | Project for Criterion C</p>
     </footer>
 
     <script>
         window.onscroll = function() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            
+            // Полоска прогресса
             document.getElementById("myBar").style.width = scrolled + "%";
 
-            // Логика счетчика страниц
-            var totalPages = 7;
-            var currentPage = Math.ceil((scrolled / 100) * totalPages);
+            // Счетчик панелей
+            let totalPages = 7;
+            let currentPage = Math.ceil((scrolled / 100) * totalPages);
             if (currentPage <= 0) currentPage = 1;
             if (currentPage > totalPages) currentPage = totalPages;
             document.getElementById("current-page").innerText = currentPage;
