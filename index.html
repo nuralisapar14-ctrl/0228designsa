@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odds Against Life | Manga Project</title>
+    <title>Odds Against Life | Criteria B & C</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -19,167 +19,137 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#mission">Mission</a></li>
-                    <li><a href="#functionality">Functionality</a></li>
-                    <li><a href="#tech">Tech</a></li>
-                    <li><a href="#interview">Expert View</a></li>
+                    <li><a href="#planning">B: Planning</a></li>
+                    <li><a href="#alpha">C: Alpha Product</a></li>
+                    <li><a href="#tech">Development</a></li>
+                    <li><a href="#sponsor">Sponsor</a></li>
                     <li><a href="#team">Team</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
+    <section id="planning" class="hero">
         <div class="container">
-            <h1>Odds Against Life: A Digital Intervention</h1>
-            <p>A 16-page immersive Manga experience designed to combat gambling addiction among youth.</p>
-            <a href="#functionality" class="btn">View Prototype</a>
+            <h1>Odds Against Life: Digital Intervention</h1>
+            <p><strong>Criterion B:</strong> Designing an immersive Manga experience to combat gambling addiction.</p>
+            <div class="grid-3" style="margin-top:30px;">
+                <div class="stat-card"><h3>80%</h3><p>Risk for youth </p></div>
+                <div class="stat-card"><h3>16+</h3><p>Planned panels </p></div>
+                <div class="stat-card"><h3>Mobile</h3><p>First layout </p></div>
+            </div>
         </div>
     </section>
 
     <section class="container section">
-        <div class="grid-3">
-            <div class="stat-card"><h2>80%</h2><p>Risk rate for underage players.</p></div>
-            <div class="stat-card"><h2>16+</h2><p>Hand-inked Manga panels.</p></div>
-            <div class="stat-card"><h2>2</h2><p>Diverging paths of reality.</p></div>
-        </div>
-    </section>
-
-    <section id="mission" class="container section">
-        <h2 class="section-title">1) Mission & Motivation</h2>
+        <h2 class="section-title">Criterion B: Design Planning</h2>
         <div class="grid">
             <div class="card">
-                <h3>Our "Why"</h3>
-                <p>Our motivation is to showcase **high-level teamwork** and **artistic mastery** while tackling a critical social issue. We aim to reach our peers through the visual power of Manga, helping them understand and avoid the trap of gambling addiction.</p>
+                <h3>Core Features for Alpha</h3>
+                <ul class="feature-list">
+                    <li>Vertical Webtoon scrolling interface.</li>
+                    <li>Interactive progress bar tracking.</li>
+                    <li>Mobile-friendly responsive layout.</li>
+                </ul>
             </div>
-            <div class="card dark">
-                <h3>The Solution</h3>
-                <p>By using an interactive 16-page narrative, we provide a "mental vaccine". We don't just lecture; we show the emotional and psychological consequences of every choice made by the protagonist.</p>
+            <div class="card">
+                <h3>What is NOT Included (Yet)</h3>
+                <ul class="feature-list">
+                    <li>Full 16-panel story arc.</li>
+                    <li>Advanced audio/visual effects.</li>
+                    <li>Interactive dual-ending logic.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Success Criteria</h3>
+                <ul class="feature-list">
+                    <li>Core scrolling feature works without crashing.</li>
+                    <li>User can successfully complete the main reading action.</li>
+                    <li>Basic interface is usable on mobile devices.</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="functionality" class="bg-gray section">
+    <section id="alpha" class="bg-gray section">
         <div class="container">
-            <h2 class="section-title">2) Full Functionality</h2>
+            <h2 class="section-title">Criterion C: Alpha Version Prototype</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Interactive Webtoon Reader</h3>
-                    <p>The core functionality of our project is the custom-built vertical scrolling interface. Instead of a static PDF, we created an interactive digital environment.</p>
-                    <ul class="feature-list">
-                        <li><strong>Seamless Vertical Scroll:</strong> Mimics natural social media behavior, keeping teens engaged.</li>
-                        <li><strong>Live Progress Tracking:</strong> A dynamic red progress bar at the top visually indicates how deep the user is into the story.</li>
-                        <li><strong>Intuitive UX:</strong> No complex menus; the user simply scrolls to experience the narrative flow.</li>
-                    </ul>
+                    <h3>Step-by-Step Functionality </h3>
+                    <ol class="step-list">
+                        <li><strong>Access:</strong> The user opens the GitHub Pages link.</li>
+                        <li><strong>Engagement:</strong> The user scrolls vertically to read the narrative.</li>
+                        <li><strong>Visual Feedback:</strong> The top progress bar fills up as the user reads.</li>
+                        <li><strong>Completion:</strong> The user reaches the alpha preview ending.</li>
+                    </ol>
                 </div>
                 <div class="card">
                     <div class="webtoon-viewer">
-                        <img src="page1.jpg" alt="Intro" onerror="this.style.display='none'">
-                        <img src="page8.jpg" alt="Conflict" onerror="this.style.display='none'">
-                        <img src="ending.jpg" alt="The Choice" onerror="this.style.display='none'">
-                        <div class="demo-overlay">Interactive Digital Prototype</div>
+                        <img src="page1.jpg" alt="P1"><img src="page2.jpg" alt="P2">
+                        <img src="page3.jpg" alt="P3"><img src="page4.jpg" alt="P4">
+                        <img src="page5.jpg" alt="P5"><img src="page6.jpg" alt="P6">
+                        <img src="page7.jpg" alt="P7">
+                        <div class="demo-overlay">Scroll to test Alpha Version: 7/16 Panels Loaded</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sketches" class="container section">
-        <h2 class="section-title">3) Final Sketches & Art Prototype</h2>
-        <div class="grid-3">
-            <div class="card dark">
-                <h3>Visual Identity</h3>
-                <p>We chose a <strong>Traditional B&W Manga Style</strong>. The absence of color intentionally strips away the "glamour" of casinos, forcing the reader to focus on the raw psychological distress and facial expressions.</p>
-            </div>
-            <div class="card dark">
-                <h3>The 16-Page Arc</h3>
-                <p>The prototype consists of 16+ carefully storyboarded panels. The pacing is designed to start slow (the illusion of winning) and rapidly accelerate into chaos (the addiction trap).</p>
-            </div>
-            <div class="card dark">
-                <h3>Dual-Ending Concept</h3>
-                <p>The final sketches reveal a <strong>Bifurcation Point</strong>. The 16th panel splits the narrative into two visual realities, empowering the reader to reflect on the consequences of their choices.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="tech" class="bg-gray section">
-        <div class="container">
-            <h2 class="section-title">4) Technical Requirements</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Frontend Architecture</h3>
-                    <p>The project is built using pure, lightweight web technologies to ensure maximum accessibility across all devices without requiring app downloads.</p>
-                    <ul>
-                        <li><strong>Semantic HTML5:</strong> For structured and accessible content delivery.</li>
-                        <li><strong>Custom CSS3:</strong> For responsive grid layouts, custom scrollbars, and interactive hover states.</li>
-                        <li><strong>Vanilla JavaScript:</strong> Implemented for real-time DOM manipulation (the scroll progress bar).</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Cross-Platform Optimization</h3>
-                    <p>We adhered to strict technical constraints to ensure the comic loads instantly:</p>
-                    <ul>
-                        <li><strong>Responsive Design:</strong> Fluid containers that adapt from wide desktop monitors to narrow mobile screens.</li>
-                        <li><strong>Asset Scaling:</strong> A5 manga pages are digitally optimized via scaling algorithms to prevent pixelation.</li>
-                        <li><strong>Viewport Constraints:</strong> The custom `overflow-y` viewer protects the main page layout from breaking.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="interview" class="container section">
-        <h2 class="section-title">5) Stakeholder Interview</h2>
+    <section id="tech" class="container section">
+        <h2 class="section-title">Development Evidence & Logic </h2>
         <div class="grid">
-            <div class="card dark scroll-box">
-                <h3>Insights from Almas (Project Sponsor)</h3>
-                <div class="qa">
-                    <p><strong>Q: Why use Manga instead of a traditional poster?</strong></p>
-                    <p><em>Almas:</em> "Engagement is key. A 16-page arc allows the audience to live through the character's stress. It makes the warning personal rather than theoretical."</p>
-                </div>
-                <div class="qa">
-                    <p><strong>Q: Is the Black & White style effective for this topic?</strong></p>
-                    <p><em>Almas:</em> "Yes. It removes the 'false glamour' of gambling and forces the reader to focus on the grim psychological reality."</p>
-                </div>
-                <div class="qa">
-                    <p><strong>Q: What is the most important lesson for the reader?</strong></p>
-                    <p><em>Almas:</em> "The realization of choice. Your parallel endings show that recovery is possible, but the 'trap' is devastating."</p>
-                </div>
+            <div class="card dark">
+                <h3>System Logic </h3>
+                <p>The site utilizes <strong>Vanilla JavaScript</strong> for the real-time progress bar and <strong>CSS Flexbox/Grid</strong> to maintain a viewport-locked layout for mobile consistency.</p>
             </div>
-            <div class="card">
-                <h3>Key Adjustments</h3>
-                <p>Based on our interview, we prioritized:</p>
-                <ul>
-                    <li><strong>Emotional Close-ups:</strong> To build empathy.</li>
-                    <li><strong>Heavy Inking:</strong> To create a "suffocating" atmosphere in the addiction scenes.</li>
-                    <li><strong>Mobile Optimization:</strong> For instant accessibility.</li>
-                </ul>
+            <div class="card dark">
+                <h3>Tools & Technologies </h3>
+                <p>The project is developed using <strong>HTML5</strong> for structure, <strong>CSS3</strong> for styling, and <strong>GitHub</strong> for version control and hosting.</p>
             </div>
         </div>
     </section>
 
-    <section id="team" class="bg-gray section">
+    <section id="sponsor" class="bg-gray section">
         <div class="container">
-            <h2 class="section-title">6) Meet the Creators</h2>
-            <div class="grid">
-                <div class="card team">
-                    <img src="timur.jpg" alt="Timur" class="avatar">
-                    <h3>Abdualiev Timur</h3>
-                    <p class="role">Lead Illustrator & Narrative Architect</p>
-                    <p>The "brain" and primary screenwriter. Timur manages character archetypes and storyboards. He specializes in <strong>traditional Manga ink-work</strong>, focusing on creating 16+ intense, uncolored panels to deliver raw impact.</p>
+            <h2 class="section-title">Sponsor Feedback </h2>
+            <div class="card dark scroll-box">
+                <p><em>Insights from Almas (Project Sponsor) on the Alpha version:</em></p>
+                <div class="qa">
+                    <p><strong>Q: Is the mobile usability effective?</strong></p>
+                    <p><em>Almas:</em> "Yes, the vertical scroll feels natural and is very intuitive for students." </p>
                 </div>
-                <div class="card team">
-                    <img src="nurali.jpg" alt="Nurali" class="avatar">
-                    <h3>Sapar Nurali</h3>
-                    <p class="role">Lead Developer & Creative Assistant</p>
-                    <p>The technical engine behind the site. Nurali handles <strong>web architecture and programming</strong>. He also contributes to the art by inking panels with traditional pens, combining his love for Anime with coding expertise.</p>
+                <div class="qa">
+                    <p><strong>Q: What should be improved for the final version?</strong></p>
+                    <p><em>Almas:</em> "Add more text bubbles to clarify the internal conflict of the character." </p>
                 </div>
+                <div class="qa">
+                    <p><strong>Q: How useful is this as an intervention?</strong></p>
+                    <p><em>Almas:</em> "It's a powerful psychological tool because it shows consequences through art." </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="container section">
+        <h2 class="section-title">The Creators</h2>
+        <div class="grid">
+            <div class="card team">
+                <img src="timur.jpg" alt="Timur" class="avatar">
+                <h3>Abdualiev Timur</h3>
+                <p class="role">Narrative Architect & Illustrator</p>
+            </div>
+            <div class="card team">
+                <img src="nurali.jpg" alt="Nurali" class="avatar">
+                <h3>Sapar Nurali</h3>
+                <p class="role">Lead Developer & Tech Lead</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Odds Against Life | Social Impact Project</p>
+        <p>© 2026 Odds Against Life | Social Impact Project | Criteria B & C </p>
     </footer>
 
     <script>
