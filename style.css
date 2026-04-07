@@ -1,71 +1,61 @@
-:root { --primary: #e63946; --dark: #1d3557; --black: #0a0a0a; }
+:root { --red: #e63946; --dark: #1d3557; --bg: #0b0d17; }
 
 body { 
-    font-family: 'Open Sans', sans-serif; 
-    margin: 0; 
-    color: #333; 
-    line-height: 1.6; 
-    scroll-behavior: smooth; 
-    background-color: #fff;
+    font-family: 'Open Sans', sans-serif; margin: 0; background: var(--bg); color: #fff; 
+    scroll-behavior: smooth; overflow-x: hidden;
 }
 
-.container { width: 90%; max-width: 1100px; margin: auto; }
+.container { width: 90%; max-width: 900px; margin: auto; }
 
-/* Header */
-header { background: #fff; padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
+/* Прогресс-бар */
+.progress-container { position: fixed; top: 0; width: 100%; height: 4px; z-index: 10000; }
+.progress-bar { height: 100%; background: var(--red); width: 0; }
+
+/* Навигация */
+header { padding: 20px 0; position: absolute; width: 100%; z-index: 100; }
 .nav-box { display: flex; justify-content: space-between; align-items: center; }
-.logo-text { font-family: 'Montserrat'; font-weight: 700; color: var(--dark); font-size: 1.2rem; }
-nav ul { list-style: none; display: flex; gap: 20px; padding: 0; margin: 0; }
-nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; }
+.logo-text { font-family: 'Montserrat'; font-weight: 700; letter-spacing: 1px; }
+nav ul { list-style: none; display: flex; gap: 30px; margin: 0; }
+nav a { text-decoration: none; color: #fff; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; opacity: 0.7; transition: 0.3s; }
+nav a:hover { opacity: 1; color: var(--red); }
 
-/* Progress Bar */
-.progress-container { position: fixed; top: 0; width: 100%; height: 6px; z-index: 2000; background: #eee; }
-.progress-bar { height: 6px; background: var(--primary); width: 0%; transition: 0.1s; }
-
-/* HERO SECTION - ИСПРАВЛЕННАЯ ВЕРСИЯ */
+/* Hero */
 .hero { 
-    height: 90vh; /* Занимает почти весь экран */
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Эффект параллакса */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+    height: 100vh; background: linear-gradient(to bottom, rgba(11,13,23,0.3), var(--bg)), url('hero.jpg');
+    background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center;
 }
-.content-box { max-width: 800px; padding: 20px; }
-.hero h1 { font-size: 4rem; font-family: 'Montserrat'; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
-.subtitle { font-size: 1.5rem; color: var(--primary); font-weight: 700; margin: 10px 0 30px; }
-.mission-text { font-size: 1.1rem; opacity: 0.9; margin-bottom: 40px; }
+.hero-inner { max-width: 700px; padding: 20px; }
+h1 { font-family: 'Montserrat'; font-size: 4.5rem; margin: 0; line-height: 1; }
+.subtitle { color: var(--red); font-weight: 700; font-size: 1.5rem; margin: 15px 0; }
+.hero-desc { opacity: 0.8; font-size: 1.1rem; margin-bottom: 40px; }
 
-/* Кнопка */
-.btn { background: var(--primary); color: white; padding: 18px 40px; text-decoration: none; border-radius: 5px; font-weight: 700; transition: 0.3s; }
-.btn:hover { background: #fff; color: var(--primary); transform: scale(1.05); }
-
-/* ВЕБТУН СКРОЛЛЕР */
-.section { padding: 80px 0; }
-.bg-gray { background: #f4f4f4; }
-.section-title { text-align: center; font-family: 'Montserrat'; font-size: 2.2rem; margin-bottom: 40px; }
-
-#page-counter { text-align: center; font-family: 'Montserrat'; font-weight: 800; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; }
-
-.webtoon-viewer { 
-    width: 100%; 
-    max-width: 800px; /* Идеальная ширина для чтения */
-    margin: 0 auto; 
-    background: #000; 
-    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+.btn { 
+    background: var(--red); color: #fff; padding: 15px 45px; text-decoration: none; 
+    border-radius: 50px; font-weight: 700; transition: 0.4s; display: inline-block;
 }
-.webtoon-viewer img { width: 100%; display: block; margin: 0; }
-.demo-overlay { padding: 40px; color: #666; text-align: center; font-style: italic; }
+.btn:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(230, 57, 70, 0.5); }
 
-/* КАРТОЧКИ И АВТОРЫ */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.card { padding: 30px; border-radius: 12px; background: white; }
-.card.dark { background: var(--dark); color: white; }
-.avatar { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--primary); margin-bottom: 20px; }
-.role { font-weight: 800; color: var(--primary); text-transform: uppercase; font-size: 0.8rem; }
+/* Читалка */
+.reader-section { padding: 100px 0; background: var(--bg); }
+.reader-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.badge { background: #fff; color: #000; padding: 5px 15px; border-radius: 4px; font-weight: 700; font-size: 0.7rem; }
+#counter { font-family: 'Montserrat'; font-weight: 700; color: var(--red); }
 
-footer { background: var(--black); color: white; text-align: center; padding: 50px 0; font-size: 0.9rem; }
+.manga-tape { width: 100%; box-shadow: 0 0 100px rgba(0,0,0,0.5); }
+.manga-tape img { width: 100%; display: block; }
+.end-trigger { padding: 60px; text-align: center; opacity: 0.5; font-style: italic; }
+
+/* Команда */
+.team-section { padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.1); }
+.title { text-align: center; font-family: 'Montserrat'; font-size: 2.5rem; margin-bottom: 60px; }
+.team-grid { display: flex; justify-content: center; gap: 100px; flex-wrap: wrap; }
+.member { text-align: center; }
+.avatar { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--red); margin-bottom: 20px; filter: grayscale(1); transition: 0.5s; }
+.member:hover .avatar { filter: grayscale(0); transform: translateY(-10px); }
+
+footer { padding: 40px; text-align: center; opacity: 0.4; font-size: 0.8rem; }
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .team-grid { gap: 50px; }
+}
