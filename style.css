@@ -4,38 +4,55 @@
     --light: #ffffff;
 }
 
-body { margin: 0; font-family: 'Arial', sans-serif; background: #f9f9f9; color: var(--dark); }
+body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; color: var(--dark); }
 
-/* Header */
-.reader-header {
-    position: sticky; top: 0; z-index: 1000;
-    background: var(--light); padding: 10px 5%;
-    display: flex; justify-content: space-between; align-items: center;
-    border-bottom: 2px solid var(--dark);
+/* Стиль логотипа */
+.logo { 
+    font-weight: 900; 
+    letter-spacing: 2px; 
+    font-size: 1.2rem;
+    color: var(--dark);
 }
 
-.progress-box { text-align: right; }
-.bar-container { width: 120px; height: 6px; background: #eee; border-radius: 3px; overflow: hidden; }
-#progress-bar { width: 12.5%; height: 100%; background: var(--accent); transition: 0.3s; }
+.reader-header {
+    position: sticky; top: 0; z-index: 1000;
+    background: var(--light); padding: 15px 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 3px solid var(--dark);
+}
 
-/* Hero PNG Section */
-.hero { background: #fff; padding: 60px 20px; text-align: center; border-bottom: 1px solid #ddd; }
-.hero-png { max-width: 300px; width: 100%; margin-bottom: 20px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); }
-.cta-button { background: var(--dark); color: #fff; border: none; padding: 12px 25px; cursor: pointer; font-weight: bold; border-radius: 5px; }
+/* Стили для Hero.png */
+.hero { background: #fff; padding: 40px 20px; text-align: center; }
+.hero-png { 
+    max-width: 400px; /* Размер картинки Hero */
+    width: 100%; 
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
 
-/* Step by Step */
-.guide { padding: 50px 10%; background: #f0f0f0; text-align: center; }
-.steps-container { display: flex; gap: 20px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
-.step-card { background: #fff; padding: 25px; border-radius: 10px; width: 250px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-.step-icon { font-size: 30px; font-weight: bold; color: var(--accent); margin-bottom: 10px; }
+.cta-button { 
+    background: var(--dark); color: #fff; border: none; 
+    padding: 15px 30px; cursor: pointer; font-weight: bold; border-radius: 5px; 
+    margin-top: 20px;
+}
 
-/* Comic Panels */
-.comic-container { max-width: 800px; margin: 40px auto; }
-.panel { background: #fff; border-bottom: 15px solid var(--dark); margin-bottom: 50px; }
+/* Стили для инструкций */
+.guide { padding: 60px 10%; background: #eee; text-align: center; }
+.steps-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+.step-card { background: #fff; padding: 20px; border-radius: 10px; width: 200px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.step-icon { color: var(--accent); font-size: 2rem; font-weight: bold; }
+
+/* Панели с перегородками */
+.comic-container { max-width: 800px; margin: 50px auto; }
+.panel { background: #fff; border-bottom: 12px solid var(--dark); margin-bottom: 40px; }
 .panel img { width: 100%; display: block; }
 
-/* About Authors */
+/* Блок авторов */
 .authors { padding: 60px 10%; background: var(--dark); color: #fff; text-align: center; }
-.authors-grid { display: flex; gap: 30px; justify-content: center; margin-top: 40px; }
-.author-card { background: #222; padding: 30px; border-radius: 10px; width: 300px; border: 1px solid #333; }
-.role { color: var(--accent); font-weight: bold; text-transform: uppercase; font-size: 14px; }
+.authors-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+.author-card { background: #222; padding: 20px; border-radius: 10px; width: 250px; }
+.role { color: var(--accent); font-size: 0.8rem; font-weight: bold; }
+
+.bar-container { width: 150px; height: 8px; background: #ddd; border-radius: 4px; overflow: hidden; }
+#progress-bar { width: 12.5%; height: 100%; background: var(--accent); transition: 0.3s; }
