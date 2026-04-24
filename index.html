@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odds Against Life | Beta Version</title>
+    <title>Odds Against Life | Beta</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,12 +19,13 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <img src="hero.jpg" alt="Odds Against Life Hero" class="hero-image">
-            <h1>Odds Against Life</h1>
-            <p>An interactive webtoon exploring the psychological impact of gambling addiction.</p>
-            <button class="start-btn" onclick="document.querySelector('.guide').scrollIntoView()">Start Experience</button>
+    <section class="hero-background">
+        <div class="hero-overlay">
+            <div class="hero-text-box">
+                <h1>ODDS AGAINST LIFE</h1>
+                <p class="project-goal">Goal: To educate and warn youth about the psychological risks and financial traps of gambling addiction through an immersive narrative.</p>
+                <button class="start-btn" onclick="document.querySelector('.guide').scrollIntoView()">Start Reading</button>
+            </div>
         </div>
     </section>
 
@@ -34,17 +35,12 @@
             <div class="step-card">
                 <div class="step-number">01</div>
                 <h3>Scroll</h3>
-                <p>Scroll down vertically to navigate through the story panels.</p>
+                <p>Scroll down vertically to navigate through the panels.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">02</div>
                 <h3>Track</h3>
-                <p>Keep an eye on the top counter to see your current progress.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">03</div>
-                <h3>Learn</h3>
-                <p>Observe the consequences of the character's decisions.</p>
+                <p>Monitor your progress with the dynamic counter above.</p>
             </div>
         </div>
     </section>
@@ -65,20 +61,14 @@
         <div class="authors-grid">
             <div class="author-card">
                 <h3>Sapar Nurali</h3>
-                <span class="role">Technical Lead & UI/UX</span>
-                <p>Responsible for web development, interactive logic, and interface optimization.</p>
+                <span class="role">Technical Lead</span>
             </div>
             <div class="author-card">
                 <h3>Abdualiev Timur</h3>
-                <span class="role">Creative Lead & Artist</span>
-                <p>Storyboarding, character design, and lead illustrator of the visual narrative.</p>
+                <span class="role">Creative Lead</span>
             </div>
         </div>
     </section>
-
-    <footer class="footer">
-        <p>&copy; 2026 Odds Against Life Project. Final Version Coming Soon.</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
