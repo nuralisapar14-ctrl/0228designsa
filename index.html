@@ -1,159 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odds Against Life | Alpha Experience</title>
+    <title>Odds Against Life | Beta Version</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
-
-    <header>
-        <div class="container nav-box">
-            <div class="logo-wrapper">
-                <img src="logo.png" alt="Logo" class="main-logo" onerror="this.style.display='none'">
-                <span class="logo-text">ODDS AGAINST LIFE</span>
+    <header class="reader-header">
+        <div class="logo">ODDS AGAINST LIFE <span class="tag">BETA</span></div>
+        <div class="progress-box">
+            <span id="panel-counter">Panel 1 / 8</span>
+            <div class="bar-container">
+                <div id="progress-bar"></div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#about">Mission</a></li>
-                    <li><a href="#guide">How to Use</a></li>
-                    <li><a href="#reader">Read</a></li>
-                    <li><a href="#team">Team</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
-    <section id="about" class="hero">
-        <div class="hero-inner">
-            <h1>Odds Against Life</h1>
-            <p class="subtitle">An Interactive Journey Through Addiction</p>
-            <p class="hero-desc">
-                Educational manga experience designed to show the reality of gambling risks. 
-                Scroll down to witness the consequences of high-stakes choices.
-            </p>
-            <a href="#reader" class="btn">Launch Experience</a>
+    <section class="hero">
+        <h1>Odds Against Life</h1>
+        <p>Интерактивная история о последствиях азартных игр.</p>
+    </section>
+
+    <section class="guide">
+        <div class="step">
+            <span class="step-num">01</span>
+            <p>Листайте вниз для чтения</p>
+        </div>
+        <div class="step">
+            <span class="step-num">02</span>
+            <p>Следите за счетчиком сверху</p>
+        </div>
+        <div class="step">
+            <span class="step-num">03</span>
+            <p>Сделайте свой выбор</p>
         </div>
     </section>
 
-    <section id="guide" class="guide-section">
-        <div class="container">
-            <h2 class="title">How to Use</h2>
-            <div class="steps-grid">
-                <div class="step-item">
-                    <span class="step-num">01</span>
-                    <h3>Scroll to Navigate</h3>
-                    <p>Move vertically to progress through the story. Optimized for mobile and desktop viewing.</p>
-                </div>
-                <div class="step-item">
-                    <span class="step-num">02</span>
-                    <h3>Track Progress</h3>
-                    <p>Monitor the top red bar and panel counter to follow the narrative structure.</p>
-                </div>
-                <div class="step-item">
-                    <span class="step-num">03</span>
-                    <h3>Final Message</h3>
-                    <p>Read to the end of the Alpha draft for the core social message regarding gambling awareness.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main class="comic-container">
+        <div class="panel"><img src="cover.jpg" alt="Обложка"></div>
+        <div class="panel"><img src="page1.jpg" alt="Страница 1"></div>
+        <div class="panel"><img src="page2.jpg" alt="Страница 2"></div>
+        <div class="panel"><img src="page3.jpg" alt="Страница 3"></div>
+        <div class="panel"><img src="page4.jpg" alt="Страница 4"></div>
+        <div class="panel"><img src="page5.jpg" alt="Страница 5"></div>
+        <div class="panel"><img src="page6.jpg" alt="Страница 6"></div>
+        <div class="panel"><img src="page7.jpg" alt="Страница 7"></div>
+    </main>
 
-    <section id="reader" class="reader-section">
-        <div class="container">
-            <div class="reader-header">
-                <span class="badge">ALPHA PROTOTYPE</span>
-                <div id="counter">Panel <span id="current-page">1</span> / 7</div>
-            </div>
-
-            <div class="manga-tape">
-                <img src="page1.jpg" alt="Panel 1">
-                <img src="page2.jpg" alt="Panel 2">
-                <img src="page3.jpg" alt="Panel 3">
-                <img src="page4.jpg" alt="Panel 4">
-                <img src="page5.jpg" alt="Panel 5">
-                <img src="page6.jpg" alt="Panel 6">
-                <img src="page7.jpg" alt="Panel 7">
-                <div class="end-trigger">To be continued in Beta...</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="team" class="team-section">
-        <div class="container">
-            <h2 class="title">The Creators</h2>
-            <div class="team-grid">
-                
-                <div class="member">
-                    <img src="timur.jpg" alt="Timur" class="avatar">
-                    <h3>Abdualiev Timur</h3>
-                    <span class="role">Creative Director & Illustrator</span>
-                    <ul class="member-tasks">
-                        <li>Narrative Storyboarding</li>
-                        <li>Character & Environment Design</li>
-                        <li>Social Impact Research</li>
-                    </ul>
-                </div>
-
-                <div class="member">
-                    <img src="nurali.jpg" alt="Nurali" class="avatar">
-                    <h3>Sapar Nurali</h3>
-                    <span class="role">Technical Lead & Developer</span>
-                    <ul class="member-tasks">
-                        <li>Web Architecture (HTML/CSS)</li>
-                        <li>Progress Tracking Logic (JS)</li>
-                        <li>GitHub Deployment & Optimization</li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 Odds Against Life | Project for Criterion C</p>
+    <footer class="final-footer">
+        <p>To be continued in Final Version...</p>
     </footer>
 
-  <script>
-        window.onscroll = function() {
-            // 1. Полоска прогресса (на весь сайт)
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            document.getElementById("myBar").style.width = scrolled + "%";
-
-            // 2. УМНЫЙ СЧЕТЧИК (Только для комикса)
-            const reader = document.getElementById("reader");
-            const counterDisplay = document.getElementById("current-page");
-            
-            if (reader) {
-                let readerRect = reader.getBoundingClientRect();
-                let triggerPoint = window.innerHeight / 2; // Центр экрана
-
-                // Если еще не дошли до комикса
-                if (readerRect.top > triggerPoint) {
-                    counterDisplay.innerText = "1";
-                } 
-                // Если уже пролистали комикс
-                else if (readerRect.bottom < triggerPoint) {
-                    counterDisplay.innerText = "7";
-                } 
-                // Если мы внутри блока комикса
-                else {
-                    let readerHeight = reader.offsetHeight;
-                    let progressInReader = triggerPoint - readerRect.top;
-                    let totalPanels = 7;
-                    
-                    let current = Math.ceil((progressInReader / readerHeight) * totalPanels);
-                    current = Math.max(1, Math.min(current, totalPanels));
-                    counterDisplay.innerText = current;
-                }
-            }
-        };
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
