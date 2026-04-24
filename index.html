@@ -14,68 +14,85 @@
             <span class="tag">BETA</span>
         </div>
         
-        <div class="header-controls">
-            <div class="progress-info">
-                <span id="panel-counter">Panel 1 / 8</span>
-                <div class="bar-container"><div id="progress-bar"></div></div>
-            </div>
+        <div class="header-right">
+            <div id="panel-counter">Panel 1 / 8</div>
+            <div class="bar-container"><div id="progress-bar"></div></div>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-overlay">
             <div class="hero-content">
-                <h1>ODDS AGAINST LIFE</h1>
-                <p class="goal">Stop the cycle. Understand the risk. Break the addiction.</p>
+                <h1 class="glitch-text">ODDS AGAINST LIFE</h1>
+                <p class="goal">"The house always wins. It's time to break the cycle."</p>
                 <div class="hero-buttons">
-                    <button class="btn-primary" onclick="document.querySelector('.comic-container').scrollIntoView()">Read Now</button>
-                    <button class="btn-secondary" onclick="document.querySelector('.authors').scrollIntoView()">Meet Creators</button>
+                    <button class="btn-main" onclick="document.querySelector('.comic-container').scrollIntoView()">START READING</button>
+                    <button class="btn-outline" onclick="document.querySelector('.authors').scrollIntoView()">THE CREATORS</button>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="guide">
-        <div class="step">
+        <div class="step-card">
             <div class="step-num">01</div>
-            <p>Scroll down to dive into the story</p>
+            <h3>SCROLL</h3>
+            <p>Navigate through the dark reality of addiction.</p>
         </div>
-        <div class="step">
+        <div class="step-card">
             <div class="step-num">02</div>
-            <p>Watch the progress bar above</p>
+            <h3>TRACK</h3>
+            <p>Watch your progress on the top neon bar.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-num">03</div>
+            <h3>REFLECT</h3>
+            <p>Every choice has a permanent consequence.</p>
         </div>
     </section>
 
     <main class="comic-container">
-        <div class="panel"><img src="cover.jpg"></div>
-        <div class="panel"><img src="page1.jpg"></div>
-        <div class="panel"><img src="page2.jpg"></div>
-        <div class="panel"><img src="page3.jpg"></div>
-        <div class="panel"><img src="page4.jpg"></div>
-        <div class="panel"><img src="page5.jpg"></div>
-        <div class="panel"><img src="page6.jpg"></div>
-        <div class="panel"><img src="page7.jpg"></div>
+        <div class="panel"><img src="cover.jpg" alt="Cover"></div>
+        <div class="panel"><img src="page1.jpg" alt="Panel 1"></div>
+        <div class="panel"><img src="page2.jpg" alt="Panel 2"></div>
+        <div class="panel"><img src="page3.jpg" alt="Panel 3"></div>
+        <div class="panel"><img src="page4.jpg" alt="Panel 4"></div>
+        <div class="panel"><img src="page5.jpg" alt="Panel 5"></div>
+        <div class="panel"><img src="page6.jpg" alt="Panel 6"></div>
+        <div class="panel"><img src="page7.jpg" alt="Panel 7"></div>
     </main>
 
+    <section class="project-insight">
+        <div class="insight-container">
+            <div class="insight-box">
+                <h2 class="glitch-text-small">THE MESSAGE</h2>
+                <p>
+                    "Odds Against Life" is not just a story; it's a warning. Gambling addiction doesn't just drain your wallet—it consumes your mind. We created this interactive webtoon to demonstrate the psychological descent into the casino trap. The core message is simple: <strong>The house always wins. The only way to survive is to break the cycle.</strong>
+                </p>
+            </div>
+            <div class="insight-box">
+                <h2 class="glitch-text-small">ART DIRECTION</h2>
+                <p>
+                    Why this style? We deliberately chose a dark, gritty aesthetic with harsh neon red accents. This color palette simulates the deceptive, aggressive allure of a casino. The heavy black shadows represent the anxiety and isolation of addiction, stripping away the glamorous illusion to reveal the dangerous reality underneath.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section class="authors">
-        <h2 class="section-title">THE CREATIVE TEAM</h2>
+        <h2 class="title">THE CREATIVE TEAM</h2>
         <div class="authors-grid">
             <div class="author-card">
-                <div class="author-photo">
-                    <img src="nurali.jpg" alt="Sapar Nurali">
-                </div>
+                <div class="photo-frame"><img src="sapar.jpg" alt="Sapar Nurali"></div>
                 <h3>Sapar Nurali</h3>
-                <span class="role">Lead Developer</span>
-                <p>System architecture and interaction logic.</p>
+                <span class="role">Tech Lead / Developer</span>
+                <p class="author-desc">System architecture, UI/UX, and interaction logic.</p>
             </div>
-
             <div class="author-card">
-                <div class="author-photo">
-                    <img src="timur.jpg" alt="Timur Abdualiev">
-                </div>
+                <div class="photo-frame"><img src="timur.jpg" alt="Timur Abdualiev"></div>
                 <h3>Abdualiev Timur</h3>
-                <span class="role">Creative Director</span>
-                <p>Concept art and narrative illustration.</p>
+                <span class="role">Art Director / Illustrator</span>
+                <p class="author-desc">Concept art, storyboards, and visual narrative.</p>
             </div>
         </div>
     </section>
