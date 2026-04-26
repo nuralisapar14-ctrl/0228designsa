@@ -384,3 +384,52 @@ body {
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
     transition: height 0.3s ease;
 }
+/* --- ACTION PLAN SECTION --- */
+.action-plan {
+    background: #0a0a0a;
+    border-top: 1px solid #222;
+    padding: 40px 5%;
+    margin-top: 50px;
+}
+
+.ap-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ap-title {
+    color: var(--neon-red);
+    font-family: 'Courier New', Courier, monospace; /* Стиль терминала */
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.ap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.ap-item {
+    font-size: 0.85rem; /* Тот самый небольшой шрифт */
+    line-height: 1.6;
+    color: #888; /* Приглушенный цвет, чтобы не отвлекать от комикса */
+    border-left: 2px solid #333;
+    padding-left: 15px;
+}
+
+.ap-num {
+    display: block;
+    color: var(--neon-red);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.ap-footer {
+    margin-top: 40px;
+    font-size: 0.7rem;
+    color: #444;
+    text-align: center;
+    text-transform: uppercase;
+}
