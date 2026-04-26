@@ -1,61 +1,76 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // Переменные для элементов
     const riskFill = document.getElementById('riskFill');
     const vignette = document.querySelector('.vignette');
+    const progressBar = document.getElementById('progress-bar');
+    const counter = document.getElementById('panel-counter');
     const body = document.body;
 
-    // --- ЛОГИКА СКРОЛЛА ---
+    // 1. ЛОГИКА СКРОЛЛА (Объединенная)
     window.addEventListener('scroll', () => {
-        // Вычисляем процент прокрутки страницы
+        const panels = document.querySelectorAll('.panel');
+        const reveals = document.querySelectorAll('.reveal');
+        const scrollPos = window.scrollY + window.innerHeight / 2;
+        const totalPanels = 8;
+
+        // Вычисляем общий прогресс страницы для Риск-метра и Виньетки
         const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
 
-        // 1. Обновляем Риск-метр
-        if (riskFill) {
-            riskFill.style.height = scrollPercent + '%';
+        // --- НОВЫЕ ФУНКЦИИ (Риск и Виньетка) ---
+        if (riskFill) riskFill.style.height = scrollPercent + '%';
+
+        // Усиливаем тень по мере спуска (Туннельное зрение)
+        if (vignette) {
+            const intensity = 150 + (scrollPercent * 1.5);
+            vignette.style.boxShadow = `inset 0 0 ${intensity}px rgba(0, 0, 0, 0.95)`;
         }
 
-        // 2. Усиливаем виньетку (Туннельное зрение)
-        // Чем больше скролл, тем больше тень
-        const intensity = 150 + (scrollPercent * 1.5);
-        vignette.style.boxShadow = `inset 0 0 ${intensity}px rgba(0, 0, 0, 0.95)`;
-
-        // 3. Эффект тряски при риске > 85%
+        // Тряска экрана на финишной прямой (больше 85%)
         if (scrollPercent > 85) {
             body.classList.add('shake-active');
         } else {
             body.classList.remove('shake-active');
         }
 
-        // 4. Плавное появление элементов (Reveal)
-        const reveals = document.querySelectorAll('.reveal');
+        // --- ПЛАВНОЕ ПОЯВЛЕНИЕ (Reveal) ---
         reveals.forEach(el => {
             const elementTop = el.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            if (elementTop < windowHeight - 100) {
+            if (elementTop < window.innerHeight - 100) {
                 el.classList.add('active');
+            }
+        });
+
+        // --- СТАРЫЕ ФУНКЦИИ (Счетчик и прогресс-бар комикса) ---
+        panels.forEach((panel, index) => {
+            if (scrollPos >= panel.offsetTop && scrollPos < (panel.offsetTop + panel.offsetHeight)) {
+                // Обновляем текст (Panel 1 / 8)
+                if (counter) counter.innerText = `Panel ${index + 1} / ${totalPanels}`;
+                
+                // Обновляем красную полоску в шапке
+                if (progressBar) {
+                    let panelProgress = ((index + 1) / totalPanels) * 100;
+                    progressBar.style.width = panelProgress + '%';
+                }
             }
         });
     });
 });
 
-// --- ФУНКЦИЯ СКАЧИВАНИЯ ---
+// 2. ФУНКЦИЯ СКАЧИВАНИЯ (Вне скролла)
 function downloadComic() {
-    // Для демонстрации создаем имитацию подготовки файла
     const btn = document.querySelector('.btn-download');
-    btn.innerText = "PREPARING FILE...";
+    btn.innerText = "PREPARING...";
     
     setTimeout(() => {
-        // Создаем ссылку на скачивание (замени 'comic.pdf' на имя своего файла)
         const link = document.createElement('a');
-        link.href = 'comic.pdf'; 
-        link.download = 'Odds_Against_Life_Full.pdf';
-        
-        // Временно добавляем в документ и нажимаем
+        link.href = 'comic.pdf'; // Файл должен лежать в папке с index.html
+        link.download = 'Odds_Against_Life_Comic.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
         
-        btn.innerText = "DOWNLOAD STARTED";
+        btn.innerText = "DONE!";
         setTimeout(() => btn.innerText = "DOWNLOAD FULL PDF", 2000);
-    }, 1500);
+    }, 1000);
 }
