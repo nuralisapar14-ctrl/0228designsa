@@ -1,33 +1,127 @@
-/* Глобальные стили */
-body { margin: 0; background: #050505; color: white; font-family: sans-serif; overflow-x: hidden; }
+/* --- ПЕРЕМЕННЫЕ ЦВЕТОВ --- */
+:root {
+    --neon-red: #ff003c;      
+    --neon-glow: rgba(255, 0, 60, 0.6);
+    --dark-bg: #050505;       
+    --card-bg: #111111;       
+    --text-main: #ffffff;
+    --text-dim: #888888;
+}
 
-/* КОМИКС: Убираем зазоры */
-.comic-container { max-width: 900px; margin: 0 auto; line-height: 0; }
-.panel { margin-bottom: 2px; } /* Тонкая черная линия */
-.panel img { width: 100%; display: block; transition: filter 0.5s; }
+/* --- БАЗОВЫЕ НАСТРОЙКИ --- */
+* { box-sizing: border-box; }
 
-/* РИСК-МЕТР */
-.risk-meter { position: fixed; left: 10px; top: 20%; height: 60%; width: 8px; background: #1a1a1a; border: 1px solid #333; z-index: 1001; }
-.risk-fill { position: absolute; bottom: 0; width: 100%; height: 0%; background: red; box-shadow: 0 0 15px red; transition: height 0.2s; }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
 
-/* ХЕДЕР И ПЕРЕКЛЮЧАТЕЛЬ */
-.reader-header { position: fixed; top: 0; width: 100%; height: 60px; background: rgba(0,0,0,0.95); display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 1000; border-bottom: 1px solid #333; box-sizing: border-box; }
-.ai-toggle-wrapper { display: flex; align-items: center; gap: 10px; }
-.ai-label { font-size: 10px; color: red; font-weight: bold; }
+/* Кастомный скроллбар */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: var(--neon-red); border-radius: 10px; }
 
-/* Switch Style */
-.switch { position: relative; width: 40px; height: 22px; }
+/* --- HEADER (Липкая шапка) --- */
+.reader-header {
+    position: fixed; /* Поменял на fixed для надежности */
+    top: 0; width: 100%;
+    z-index: 1000;
+    background: rgba(5, 5, 5, 0.9);
+    backdrop-filter: blur(15px);
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--neon-red);
+    box-shadow: 0 0 20px var(--neon-glow);
+}
+
+.logo-container { display: flex; align-items: center; }
+.logo { font-size: 1.4rem; font-weight: 900; color: var(--neon-red); text-transform: uppercase; text-shadow: 0 0 10px var(--neon-glow); }
+
+/* AI TOGGLE SWITCH */
+.ai-toggle-wrapper { display: flex; align-items: center; gap: 10px; background: rgba(255,0,0,0.1); padding: 5px 15px; border-radius: 20px; border: 1px solid var(--neon-red); }
+.ai-label { font-size: 0.7rem; font-weight: bold; color: var(--neon-red); letter-spacing: 1px; }
+.switch { position: relative; display: inline-block; width: 34px; height: 20px; }
 .switch input { opacity: 0; width: 0; height: 0; }
-.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #333; border-radius: 20px; transition: .4s; }
-.slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: .4s; }
-input:checked + .slider { background: red; }
-input:checked + .slider:before { transform: translateX(18px); }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #333; transition: .4s; border-radius: 34px; }
+.slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+input:checked + .slider { background-color: var(--neon-red); }
+input:checked + .slider:before { transform: translateX(14px); }
 
-/* ЭФФЕКТЫ */
-.glitch-mode { filter: contrast(1.4) saturate(1.2) hue-rotate(15deg); }
-@keyframes shake { 0% { transform: translate(1px, 1px); } 50% { transform: translate(-1px, -2px); } 100% { transform: translate(1px, 1px); } }
+/* --- РИСК-МЕТР (Слева) --- */
+.risk-meter {
+    position: fixed;
+    left: 20px; /* Перенес налево */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 250px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 4px;
+    z-index: 1000;
+}
+.risk-fill {
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(to top, #00ff00, #ffff00, #ff0000);
+    border-radius: 4px;
+    box-shadow: 0 0 15px var(--neon-red);
+    transition: height 0.3s ease-out;
+}
 
-/* СЕКЦИИ */
-.hero, .authors, .action-plan { padding: 80px 20px; text-align: center; }
-.photo-frame img { width: 180px; border: 2px solid red; border-radius: 50%; padding: 10px; }
-.btn-survey { background: none; border: 1px solid red; color: red; padding: 10px 30px; cursor: pointer; }
+/* --- HERO SECTION --- */
+.hero { height: 100vh; position: relative; overflow: hidden; }
+.hero-overlay { width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,0,0,0.05) 0%, var(--dark-bg) 80%); display: flex; align-items: center; justify-content: center; }
+.glitch-text { font-size: clamp(2rem, 10vw, 6rem); font-weight: 900; letter-spacing: -2px; }
+
+/* --- COMIC PANELS --- */
+.comic-container { max-width: 800px; margin: 0 auto; background: #000; }
+.panel { 
+    margin-bottom: 0; /* Убираем отступ для бесшовности */
+    border-bottom: 10px solid #111; /* Твоя перегородка */
+    line-height: 0; /* Фикс микро-зазоров между картинками */
+}
+.panel img { width: 100%; filter: saturate(0.8) contrast(1.1); transition: 0.6s; }
+.panel:hover img { filter: saturate(1.2) contrast(1.2); }
+
+/* --- SURVEY (Опрос) --- */
+.survey-section { margin-top: 40px; text-align: center; border: 1px solid #222; padding: 30px; border-radius: 10px; }
+.survey-btns { display: flex; gap: 15px; justify-content: center; margin-top: 15px; }
+.btn-survey { background: transparent; border: 1px solid var(--neon-red); color: var(--neon-red); padding: 10px 25px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+.btn-survey:hover { background: var(--neon-red); color: #000; }
+
+/* --- FOOTER & DOWNLOAD --- */
+.btn-download {
+    background: #fff; color: #000; border: none; padding: 12px 25px;
+    font-weight: 900; text-transform: uppercase; cursor: pointer;
+    margin-bottom: 20px; transition: 0.3s;
+}
+.btn-download:hover { background: var(--neon-red); color: #fff; }
+
+.tv-effect {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+    background-size: 100% 4px, 4px 100%;
+    pointer-events: none; z-index: 10000; opacity: 0.4;
+}
+
+/* Твои Action Plan стили сохранены */
+.action-plan { background: #0a0a0a; border-top: 1px solid #222; padding: 60px 5%; }
+.ap-item { font-size: 0.85rem; color: #888; border-left: 2px solid var(--neon-red); padding-left: 15px; margin-bottom: 20px; }
+
+/* Анимация тряски для критического риска */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    20% { transform: translate(-1px, -1px) rotate(1deg); }
+    40% { transform: translate(1px, -1px) rotate(-1deg); }
+    100% { transform: translate(1px, 1px) rotate(0deg); }
+}
