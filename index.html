@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="tv-effect"></div> <div class="risk-meter">      <div class="risk-fill" id="riskFill"></div>
-</div>
+    <div class="tv-effect"></div> 
+    <div class="risk-meter">      
+        <div class="risk-fill" id="riskFill"></div>
+    </div>
 
     <header class="reader-header">
         <div class="logo-container">
@@ -16,6 +18,14 @@
             <span class="tag">BETA</span>
         </div>
         
+        <div class="ai-toggle-wrapper">
+            <span class="ai-label">AI MODE</span>
+            <label class="switch">
+                <input type="checkbox" id="ai-toggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
         <div class="header-right">
             <div id="panel-counter">Panel 1 / 8</div>
             <div class="bar-container"><div id="progress-bar"></div></div>
@@ -98,28 +108,48 @@
             </div>
         </div>
     </section>
-<section class="action-plan reveal">
-    <div class="ap-container">
-        <h3 class="ap-title">// ACTION PLAN: BREAKING THE CYCLE</h3>
-        <div class="ap-grid">
-            <div class="ap-item">
-                <span class="ap-num">01.</span>
-                <p><strong>ACKNOWLEDGE:</strong> Recognize that gambling is a game of math, not luck. The house always wins in the long run.</p>
+
+    <section class="action-plan reveal">
+        <div class="ap-container">
+            <h3 class="ap-title">// ACTION PLAN: BREAKING THE CYCLE</h3>
+            <div class="ap-grid">
+                <div class="ap-item">
+                    <span class="ap-num">01.</span>
+                    <p><strong>ACKNOWLEDGE:</strong> Recognize that gambling is a game of math, not luck. The house always wins in the long run.</p>
+                </div>
+                <div class="ap-item">
+                    <span class="ap-num">02.</span>
+                    <p><strong>DISCONNECT:</strong> Delete all betting apps and block gambling websites. Physical distance creates mental space.</p>
+                </div>
+                <div class="ap-item">
+                    <span class="ap-num">03.</span>
+                    <p><strong>REACH OUT:</strong> Gambling thrives in secrecy. Talk to someone you trust or call a professional helpline immediately.</p>
+                </div>
             </div>
-            <div class="ap-item">
-                <span class="ap-num">02.</span>
-                <p><strong>DISCONNECT:</strong> Delete all betting apps and block gambling websites at the DNS level. Physical distance creates mental space.</p>
+
+            <div class="survey-section">
+                <h4>WAS THIS STORY IMPACTFUL?</h4>
+                <div class="survey-btns">
+                    <button class="btn-survey" onclick="handleSurvey('Yes')">YES</button>
+                    <button class="btn-survey" onclick="handleSurvey('No')">NO</button>
+                </div>
+                <p id="survey-thanks" style="display:none; color: #ff0000; margin-top: 15px;">Thank you for your feedback.</p>
             </div>
-            <div class="ap-item">
-                <span class="ap-num">03.</span>
-                <p><strong>REACH OUT:</strong> Gambling thrives in secrecy. Talk to someone you trust or call a professional helpline immediately.</p>
-            </div>
+
+            <p class="ap-footer">This project is part of a social awareness campaign. You are not alone.</p>
         </div>
-        <p class="ap-footer">This project is part of a social awareness campaign. You are not alone.</p>
-    </div>
-</section>
+    </section>
+
     <footer class="footer">
-        <p>&copy; 2026 ODDS AGAINST LIFE PROJECT</p>
+        <div class="footer-content">
+            <div class="real-help">
+                <p>HELP IS AVAILABLE: <a href="tel:+18005224700">1-800-522-4700</a> (24/7 National Helpline)</p>
+            </div>
+            
+            <button class="btn-download" onclick="window.print()">DOWNLOAD COMIC AS PDF</button>
+            
+            <p>&copy; 2026 ODDS AGAINST LIFE PROJECT</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
