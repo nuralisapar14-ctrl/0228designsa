@@ -4,16 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const counter = document.getElementById('panel-counter');
     const panels = document.querySelectorAll('.panel');
     const aiToggle = document.getElementById('ai-toggle');
-    const images = document.querySelectorAll('.panel img');
+    const comicImages = document.querySelectorAll('.comic-container img');
 
     window.addEventListener('scroll', () => {
         const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = (window.scrollY / scrollTotal) * 100;
 
-        // Риск-метр
+        // Обновляем шкалу риска справа
         if (riskFill) riskFill.style.height = scrollPercent + '%';
 
-        // Счетчик и прогресс панелей
+        // Синхронный счетчик и прогресс-бар в шапке
         panels.forEach((panel, index) => {
             const rect = panel.getBoundingClientRect();
             if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
@@ -23,18 +23,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // AI MODE логика
+    // Исправленный ИИ-режим
     if (aiToggle) {
         aiToggle.addEventListener('change', () => {
-            images.forEach(img => {
+            comicImages.forEach(img => {
                 let currentSrc = img.getAttribute('src');
                 if (aiToggle.checked) {
-                    // заменяет "page1.jpg" на "page1_ai.jpg"
-                    img.setAttribute('src', currentSrc.replace('.jpg', '_ai.jpg'));
+                    if (!currentSrc.includes('_ai.jpg')) {
+                        img.src = currentSrc.replace('.jpg', '_ai.jpg');
+                    }
                 } else {
-                    img.setAttribute('src', currentSrc.replace('_ai.jpg', '.jpg'));
+                    img.src = currentSrc.replace('_ai.jpg', '.jpg');
                 }
             });
         });
     }
 });
+
+function handleSurvey(ans) {
+    document.querySelector('.survey-btns').style.display = 'none';
+    document.getElementById('survey-thanks').style.display = 'block';
+}
