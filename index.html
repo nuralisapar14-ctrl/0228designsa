@@ -1,53 +1,139 @@
-<section class="action-plan">
-        <div class="ap-container">
-            <h2 class="insight-title" style="text-align: center; margin-bottom: 50px;">// ACTION PLAN: BREAKING THE CYCLE</h2>
-            
-            <div class="ap-grid">
-                <div class="ap-item">
-                    <div class="ap-header">
-                        <span class="ap-num">01</span>
-                        <h4>ACKNOWLEDGE</h4>
-                    </div>
-                    <p>Stop lying to yourself. Gambling is not a "side hustle" or a "skill"—it is a mathematical certainty designed to make you lose. The first step to freedom is admitting that <strong>the house always wins.</strong></p>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odds Against Life | Beta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tv-effect"></div> 
+    <div class="risk-meter">      
+        <div class="risk-fill" id="riskFill"></div>
+    </div>
 
-                <div class="ap-item">
-                    <div class="ap-header">
-                        <span class="ap-num">02</span>
-                        <h4>ISOLATE</h4>
-                    </div>
-                    <p>Destroy the bridge. Delete all betting apps, block gambling sites via DNS (use tools like Cold Turkey or GamBlock), and unsubscribe from all "tipster" emails. <strong>Distance is your best defense.</strong></p>
-                </div>
+    <header class="reader-header">
+        <div class="logo-container">
+            <div class="logo">ODDS AGAINST LIFE</div>
+            <span class="tag">BETA</span>
+        </div>
+        
+        <div class="ai-toggle-wrapper">
+            <span class="ai-label">AI MODE</span>
+            <label class="switch">
+                <input type="checkbox" id="ai-toggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        
+        <div class="header-right">
+            <div id="panel-counter">Panel 1 / 8</div>
+            <div class="bar-container"><div id="progress-bar"></div></div>
+        </div>
+    </header>
 
-                <div class="ap-item">
-                    <div class="ap-header">
-                        <span class="ap-num">03</span>
-                        <h4>RECLAIM</h4>
-                    </div>
-                    <p>Hand over your finances to someone you trust for at least 90 days. If you don't have access to the money, you can't lose it. Redirect your "gambling time" into a high-intensity physical activity.</p>
-                </div>
-
-                <div class="ap-item">
-                    <div class="ap-header">
-                        <span class="ap-num">04</span>
-                        <h4>SUPPORT</h4>
-                    </div>
-                    <p>Gambling thrives in secrecy. Break the silence. Contact <strong>1-800-GAMBLER</strong> or join a local GA (Gamblers Anonymous) meeting. You are not the first person to face this, and you won't be the last to win.</p>
-                </div>
-            </div>
-
-            <div class="survey-section">
-                <div class="survey-content">
-                    <h3>WAS THIS IMPACTFUL?</h3>
-                    <p>Your response helps us improve our social mission.</p>
-                    <div class="survey-btns">
-                        <button class="btn-survey" onclick="handleSurvey('Yes')">YES, ABSOLUTELY</button>
-                        <button class="btn-survey" onclick="handleSurvey('No')">NOT REALLY</button>
-                    </div>
-                    <p id="survey-thanks" style="display:none; color: var(--neon-red); font-weight: bold; margin-top: 20px; letter-spacing: 2px;">
-                        SYSTEM: FEEDBACK RECORDED. STAY STRONG.
-                    </p>
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="glitch-text">ODDS AGAINST LIFE</h1>
+                <p class="goal">"The house always wins. It's time to break the cycle."</p>
+                <div class="hero-buttons">
+                    <button class="btn-main" onclick="document.querySelector('.comic-container').scrollIntoView()">START READING</button>
+                    <button class="btn-outline" onclick="document.querySelector('.authors').scrollIntoView()">THE CREATORS</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="guide">
+        <div class="step-card">
+            <div class="step-num">01</div>
+            <h3>SCROLL</h3>
+            <p>Navigate through the dark reality of addiction.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-num">02</div>
+            <h3>TRACK</h3>
+            <p>Watch your progress on the top neon bar.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-num">03</div>
+            <h3>REFLECT</h3>
+            <p>Every choice has a permanent consequence.</p>
+        </div>
+    </section>
+
+    <main class="comic-container">
+        <div class="panel"><img src="cover.jpg" alt="Cover"></div>
+        <div class="panel"><img src="page1.jpg" alt="Panel 1"></div>
+        <div class="panel"><img src="page2.jpg" alt="Panel 2"></div>
+        <div class="panel"><img src="page3.jpg" alt="Panel 3"></div>
+        <div class="panel"><img src="page4.jpg" alt="Panel 4"></div>
+        <div class="panel"><img src="page5.jpg" alt="Panel 5"></div>
+        <div class="panel"><img src="page6.jpg" alt="Panel 6"></div>
+        <div class="panel"><img src="page7.jpg" alt="Panel 7"></div>
+    </main>
+
+    <section class="project-insight">
+        <div class="insight-container">
+            <div class="insight-box">
+                <h2 class="glitch-text-small">THE MESSAGE</h2>
+                <p>
+                    "Odds Against Life" is not just a story; it's a warning. Gambling addiction doesn't just drain your wallet—it consumes your mind. We created this interactive webtoon to demonstrate the psychological descent into the casino trap. The core message is simple: <strong>The house always wins. The only way to survive is to break the cycle.</strong>
+                </p>
+            </div>
+            <div class="insight-box">
+                <h2 class="glitch-text-small">ART DIRECTION</h2>
+                <p>
+                    Why this style? We deliberately chose a dark, gritty aesthetic with harsh neon red accents. This color palette simulates the deceptive, aggressive allure of a casino. The heavy black shadows represent the anxiety and isolation of addiction, stripping away the glamorous illusion to reveal the dangerous reality underneath.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="authors">
+        <h2 class="title">THE CREATIVE TEAM</h2>
+        <div class="authors-grid">
+            <div class="author-card">
+                <div class="photo-frame"><img src="nurali.jpg" alt="Sapar Nurali"></div>
+                <h3>Sapar Nurali</h3>
+                <span class="role">Tech Lead / Developer</span>
+                <p class="author-desc">System architecture, UI/UX, and interaction logic.</p>
+            </div>
+            <div class="author-card">
+                <div class="photo-frame"><img src="timur.jpg" alt="Timur Abdualiev"></div>
+                <h3>Abdualiev Timur</h3>
+                <span class="role">Art Director / Illustrator</span>
+                <p class="author-desc">Concept art, storyboards, and visual narrative.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="action-plan reveal">
+        <div class="ap-container">
+            <h3 class="ap-title">// ACTION PLAN: BREAKING THE CYCLE</h3>
+            <div class="ap-grid">
+                <div class="ap-item">
+                    <span class="ap-num">01.</span>
+                    <p><strong>ACKNOWLEDGE:</strong> Recognize that gambling is a game of math, not luck. The house always wins in the long run.</p>
+                </div>
+                <div class="ap-item">
+                    <span class="ap-num">02.</span>
+                    <p><strong>DISCONNECT:</strong> Delete all betting apps and block gambling websites at the DNS level. Physical distance creates mental space.</p>
+                </div>
+                <div class="ap-item">
+                    <span class="ap-num">03.</span>
+                    <p><strong>REACH OUT:</strong> Gambling thrives in secrecy. Talk to someone you trust or call a professional helpline immediately.</p>
+                </div>
+            </div>
+            <p class="ap-footer">This project is part of a social awareness campaign. You are not alone.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 ODDS AGAINST LIFE PROJECT</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
