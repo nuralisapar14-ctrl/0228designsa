@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odds Against Life | Full Build</title>
+    <title>Odds Against Life | Beta</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,7 +28,8 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero-section">
+        <img src="hero.jpg" alt="Hero Background" class="hero-img">
         <div class="hero-overlay">
             <div class="hero-content">
                 <h1 class="glitch-text">ODDS AGAINST LIFE</h1>
@@ -73,13 +74,13 @@
     <section class="project-insight">
         <div class="insight-container">
             <div class="insight-box">
-                <h2 class="glitch-text-small">THE MESSAGE</h2>
+                <h2 class="insight-title">THE MESSAGE</h2>
                 <p>
                     "Odds Against Life" is not just a story; it's a warning. Gambling addiction doesn't just drain your wallet—it consumes your mind. We created this interactive webtoon to demonstrate the psychological descent into the casino trap. The core message is simple: <strong>The house always wins. The only way to survive is to break the cycle.</strong>
                 </p>
             </div>
             <div class="insight-box">
-                <h2 class="glitch-text-small">ART DIRECTION</h2>
+                <h2 class="insight-title">ART DIRECTION</h2>
                 <p>
                     Why this style? We deliberately chose a dark, gritty aesthetic with harsh neon red accents. This color palette simulates the deceptive, aggressive allure of a casino. The heavy black shadows represent the anxiety and isolation of addiction, stripping away the glamorous illusion to reveal the dangerous reality underneath.
                 </p>
@@ -105,7 +106,7 @@
         </div>
     </section>
 
-    <section class="action-plan reveal">
+    <section class="action-plan">
         <div class="ap-container">
             <h3 class="ap-title">// ACTION PLAN: BREAKING THE CYCLE</h3>
             <div class="ap-grid">
@@ -129,9 +130,8 @@
                     <button class="btn-survey" onclick="handleSurvey('Yes')">YES</button>
                     <button class="btn-survey" onclick="handleSurvey('No')">NO</button>
                 </div>
-                <p id="survey-thanks" style="display:none; color:red; margin-top:15px;">Thank you for your feedback.</p>
+                <p id="survey-thanks" style="display:none; color:#ff0000; margin-top:15px; font-weight:bold;">Thank you for your feedback.</p>
             </div>
-            <p class="ap-footer">This project is part of a social awareness campaign. You are not alone.</p>
         </div>
     </section>
 
