@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odds Against Life | Beta</title>
+    <title>Odds Against Life | Full Build</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="tv-effect"></div> 
-    <div class="risk-meter">      
-        <div class="risk-fill" id="riskFill"></div>
-    </div>
+    <div class="risk-meter"><div class="risk-fill" id="riskFill"></div></div>
 
     <header class="reader-header">
         <div class="logo-container">
             <div class="logo">ODDS AGAINST LIFE</div>
             <span class="tag">BETA</span>
         </div>
-        
         <div class="ai-toggle-wrapper">
             <span class="ai-label">AI MODE</span>
             <label class="switch">
@@ -25,7 +22,6 @@
                 <span class="slider round"></span>
             </label>
         </div>
-
         <div class="header-right">
             <div id="panel-counter">Panel 1 / 8</div>
             <div class="bar-container"><div id="progress-bar"></div></div>
@@ -126,28 +122,21 @@
                     <p><strong>REACH OUT:</strong> Gambling thrives in secrecy. Talk to someone you trust or call a professional helpline immediately.</p>
                 </div>
             </div>
-
+            
             <div class="survey-section">
-                <h4>WAS THIS STORY IMPACTFUL?</h4>
+                <h4>WAS THIS IMPACTFUL?</h4>
                 <div class="survey-btns">
                     <button class="btn-survey" onclick="handleSurvey('Yes')">YES</button>
                     <button class="btn-survey" onclick="handleSurvey('No')">NO</button>
                 </div>
-                <p id="survey-thanks" style="display:none; color: #ff0000; margin-top: 15px; font-weight: bold;">Thank you for your feedback.</p>
+                <p id="survey-thanks" style="display:none; color:red; margin-top:15px;">Thank you for your feedback.</p>
             </div>
-
             <p class="ap-footer">This project is part of a social awareness campaign. You are not alone.</p>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="footer-content">
-            <div class="support-links">
-                <p>HELP IS AVAILABLE: <a href="tel:+18005224700">1-800-522-4700</a></p>
-            </div>
-            <button class="btn-download" onclick="window.print()">DOWNLOAD COMIC (PDF)</button>
-            <p>&copy; 2026 ODDS AGAINST LIFE PROJECT</p>
-        </div>
+        <p>&copy; 2026 ODDS AGAINST LIFE PROJECT</p>
     </footer>
 
     <script src="script.js"></script>
