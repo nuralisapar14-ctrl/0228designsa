@@ -1,38 +1,138 @@
-/* Основные настройки */
-body { margin: 0; background: #050505; color: white; font-family: sans-serif; overflow-x: hidden; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odds Against Life | Beta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tv-effect"></div> 
+    <div class="risk-meter">      
+        <div class="risk-fill" id="riskFill"></div>
+    </div>
 
-/* КОМИКС БЕЗ ЛИНИЙ */
-.comic-container { max-width: 900px; margin: 0 auto; line-height: 0; }
-.panel { margin-bottom: 2px; }
-.panel img { width: 100%; display: block; transition: filter 0.4s; }
+    <header class="reader-header">
+        <div class="logo-container">
+            <div class="logo">ODDS AGAINST LIFE</div>
+            <span class="tag">BETA</span>
+        </div>
+        
+        <div class="ai-toggle-wrapper">
+            <span class="ai-label">AI MODE</span>
+            <label class="switch">
+                <input type="checkbox" id="ai-toggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
 
-/* РИСК-МЕТР */
-.risk-meter { position: fixed; left: 10px; top: 20%; height: 60%; width: 8px; background: #222; z-index: 100; border: 1px solid #444; }
-.risk-fill { position: absolute; bottom: 0; width: 100%; height: 0%; background: red; box-shadow: 0 0 15px red; transition: height 0.2s; }
+        <div class="header-right">
+            <div id="panel-counter">Panel 1 / 8</div>
+            <div class="bar-container"><div id="progress-bar"></div></div>
+        </div>
+    </header>
 
-/* HEADER & UI */
-.reader-header { position: fixed; top: 0; width: 100%; height: 60px; background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 1000; border-bottom: 1px solid #333; box-sizing: border-box;}
-.bar-container { width: 100px; height: 4px; background: #333; margin-top: 5px; }
-#progress-bar { height: 100%; width: 0; background: red; box-shadow: 0 0 5px red; }
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="glitch-text">ODDS AGAINST LIFE</h1>
+                <p class="goal">"The house always wins. It's time to break the cycle."</p>
+                <div class="hero-buttons">
+                    <button class="btn-main" onclick="document.querySelector('.comic-container').scrollIntoView()">START READING</button>
+                    <button class="btn-outline" onclick="document.querySelector('.authors').scrollIntoView()">THE CREATORS</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-/* AI TOGGLE */
-.ai-toggle-wrapper { display: flex; align-items: center; gap: 8px; }
-.switch { position: relative; width: 34px; height: 20px; }
-.switch input { opacity: 0; width: 0; height: 0; }
-.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #555; border-radius: 20px; transition: .4s; }
-.slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: .4s; }
-input:checked + .slider { background: red; }
-input:checked + .slider:before { transform: translateX(14px); }
+    <section class="guide">
+        <div class="step-card">
+            <div class="step-num">01</div>
+            <h3>SCROLL</h3>
+            <p>Navigate through the dark reality of addiction.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-num">02</div>
+            <h3>TRACK</h3>
+            <p>Watch your progress on the top neon bar.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-num">03</div>
+            <h3>REFLECT</h3>
+            <p>Every choice has a permanent consequence.</p>
+        </div>
+    </section>
 
-/* ГЛИТЧ И ТРЯСКА */
-.glitch-mode { filter: hue-rotate(90deg) contrast(1.3); }
-@keyframes shake { 
-    0% { transform: translate(1px, 1px); }
-    50% { transform: translate(-1px, -2px); }
-    100% { transform: translate(1px, 1px); }
-}
+    <main class="comic-container">
+        <div class="panel"><img src="cover.jpg" alt="Cover"></div>
+        <div class="panel"><img src="page1.jpg" alt="Panel 1"></div>
+        <div class="panel"><img src="page2.jpg" alt="Panel 2"></div>
+        <div class="panel"><img src="page3.jpg" alt="Panel 3"></div>
+        <div class="panel"><img src="page4.jpg" alt="Panel 4"></div>
+        <div class="panel"><img src="page5.jpg" alt="Panel 5"></div>
+        <div class="panel"><img src="page6.jpg" alt="Panel 6"></div>
+        <div class="panel"><img src="page7.jpg" alt="Panel 7"></div>
+    </main>
 
-/* Остальные секции */
-.hero, .guide, .authors, .action-plan, .footer { padding: 60px 20px; text-align: center; }
-.authors img { width: 150px; border-radius: 50%; border: 2px solid red; }
-button { cursor: pointer; }
+    <section class="project-insight">
+        <div class="insight-container">
+            <div class="insight-box">
+                <h2 class="glitch-text-small">THE MESSAGE</h2>
+                <p>
+                    "Odds Against Life" is not just a story; it's a warning. Gambling addiction doesn't just drain your wallet—it consumes your mind.
+                </p>
+            </div>
+            <div class="insight-box">
+                <h2 class="glitch-text-small">ART DIRECTION</h2>
+                <p>
+                    Dark, gritty aesthetic with harsh neon red accents to simulate the aggressive allure of a casino.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="authors">
+        <h2 class="title">THE CREATIVE TEAM</h2>
+        <div class="authors-grid">
+            <div class="author-card">
+                <div class="photo-frame"><img src="nurali.jpg" alt="Sapar Nurali"></div>
+                <h3>Sapar Nurali</h3>
+                <span class="role">Tech Lead / Developer</span>
+            </div>
+            <div class="author-card">
+                <div class="photo-frame"><img src="timur.jpg" alt="Timur Abdualiev"></div>
+                <h3>Abdualiev Timur</h3>
+                <span class="role">Art Director / Illustrator</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="action-plan reveal">
+        <div class="ap-container">
+            <h3 class="ap-title">// ACTION PLAN</h3>
+            <div class="ap-grid">
+                <div class="ap-item"><p><strong>01. ACKNOWLEDGE</strong></p></div>
+                <div class="ap-item"><p><strong>02. DISCONNECT</strong></p></div>
+                <div class="ap-item"><p><strong>03. REACH OUT</strong></p></div>
+            </div>
+
+            <div class="survey-section">
+                <h4>WAS THIS IMPACTFUL?</h4>
+                <div class="survey-btns">
+                    <button class="btn-survey" onclick="handleSurvey('Yes')">YES</button>
+                    <button class="btn-survey" onclick="handleSurvey('No')">NO</button>
+                </div>
+                <p id="survey-thanks" style="display:none; color:red;">Thank you for your feedback.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>HELP: <a href="tel:+18005224700">1-800-522-4700</a></p>
+        <button class="btn-download" onclick="window.print()">DOWNLOAD PDF</button>
+        <p>&copy; 2026 ODDS AGAINST LIFE</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
