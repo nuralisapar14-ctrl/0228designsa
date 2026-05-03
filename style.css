@@ -1,127 +1,38 @@
-/* Общие стили */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #050505;
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
-}
+/* Основные настройки */
+body { margin: 0; background: #050505; color: white; font-family: sans-serif; overflow-x: hidden; }
 
-/* КОМИКС: Убираем линии между картинками */
-.comic-container {
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 0; /* Убирает микро-отступы */
-}
+/* КОМИКС БЕЗ ЛИНИЙ */
+.comic-container { max-width: 900px; margin: 0 auto; line-height: 0; }
+.panel { margin-bottom: 2px; }
+.panel img { width: 100%; display: block; transition: filter 0.4s; }
 
-.panel img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 2px; /* Тонкая стильная линия */
-    transition: filter 0.5s ease;
-}
+/* РИСК-МЕТР */
+.risk-meter { position: fixed; left: 10px; top: 20%; height: 60%; width: 8px; background: #222; z-index: 100; border: 1px solid #444; }
+.risk-fill { position: absolute; bottom: 0; width: 100%; height: 0%; background: red; box-shadow: 0 0 15px red; transition: height 0.2s; }
 
-/* РИСК-МЕТР СЛЕВА */
-.risk-meter {
-    position: fixed;
-    left: 15px;
-    top: 20%;
-    height: 60%;
-    width: 8px;
-    background: #1a1a1a;
-    border: 1px solid #333;
-    z-index: 1000;
-}
+/* HEADER & UI */
+.reader-header { position: fixed; top: 0; width: 100%; height: 60px; background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 1000; border-bottom: 1px solid #333; box-sizing: border-box;}
+.bar-container { width: 100px; height: 4px; background: #333; margin-top: 5px; }
+#progress-bar { height: 100%; width: 0; background: red; box-shadow: 0 0 5px red; }
 
-.risk-fill {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 0%;
-    background: linear-gradient(to top, #ffcc00, #ff0000);
-    box-shadow: 0 0 10px #ff0000;
-    transition: height 0.3s ease-out;
-}
-
-/* AI TOGGLE СТИЛИ */
-.ai-toggle-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-right: 20px;
-}
-
-.ai-label {
-    font-size: 10px;
-    color: #ff0000;
-    font-weight: bold;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 34px;
-    height: 20px;
-}
-
+/* AI TOGGLE */
+.ai-toggle-wrapper { display: flex; align-items: center; gap: 8px; }
+.switch { position: relative; width: 34px; height: 20px; }
 .switch input { opacity: 0; width: 0; height: 0; }
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #333;
-    transition: .4s;
-    border-radius: 20px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 14px; width: 14px;
-    left: 3px; bottom: 3px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider { background-color: #ff0000; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #555; border-radius: 20px; transition: .4s; }
+.slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: .4s; }
+input:checked + .slider { background: red; }
 input:checked + .slider:before { transform: translateX(14px); }
 
-/* Опрос */
-.survey-section {
-    margin-top: 40px;
-    padding: 20px;
-    border: 1px solid #333;
-    background: #0a0a0a;
-}
-
-.btn-survey {
-    background: transparent;
-    border: 1px solid #ff0000;
-    color: #ff0000;
-    padding: 10px 30px;
-    cursor: pointer;
-    margin: 5px;
-    transition: 0.3s;
-}
-
-.btn-survey:hover {
-    background: #ff0000;
-    color: #000;
-}
-
-/* Глитч для картинок */
-.glitch-mode {
-    filter: contrast(1.5) saturate(1.5) hue-rotate(10deg);
-    animation: shake 0.2s infinite;
-}
-
-@keyframes shake {
+/* ГЛИТЧ И ТРЯСКА */
+.glitch-mode { filter: hue-rotate(90deg) contrast(1.3); }
+@keyframes shake { 
     0% { transform: translate(1px, 1px); }
-    50% { transform: translate(-1px, -1px); }
-    100% { transform: translate(1px, -1px); }
+    50% { transform: translate(-1px, -2px); }
+    100% { transform: translate(1px, 1px); }
 }
 
-/* Твои остальные стили (hero, authors, footer) вставляй ниже... */
+/* Остальные секции */
+.hero, .guide, .authors, .action-plan, .footer { padding: 60px 20px; text-align: center; }
+.authors img { width: 150px; border-radius: 50%; border: 2px solid red; }
+button { cursor: pointer; }
