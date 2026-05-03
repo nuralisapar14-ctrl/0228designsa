@@ -10,8 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = (window.scrollY / scrollTotal) * 100;
 
+        // Обновление шкалы риска
         if (riskFill) riskFill.style.height = scrollPercent + '%';
 
+        // Обновление счетчика страниц
         panels.forEach((panel, index) => {
             const rect = panel.getBoundingClientRect();
             if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
@@ -20,22 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // СЛАБАЯ ТРЯСКА (только если скролл > 90%)
-        if (scrollPercent > 90) {
-            document.body.style.animation = "shake 0.3s infinite linear";
-        } else {
-            document.body.style.animation = "none";
-        }
+        // Тряска полностью удалена отсюда
     });
 
+    // Логика переключения ИИ-фоток
     if (aiToggle) {
         aiToggle.addEventListener('change', () => {
             images.forEach(img => {
-                let current = img.getAttribute('src');
+                let src = img.getAttribute('src');
                 if (aiToggle.checked) {
-                    img.setAttribute('src', current.replace('.jpg', '_ai.jpg'));
+                    img.setAttribute('src', src.replace('.jpg', '_ai.jpg'));
                 } else {
-                    img.setAttribute('src', current.replace('_ai.jpg', '.jpg'));
+                    img.setAttribute('src', src.replace('_ai.jpg', '.jpg'));
                 }
             });
         });
