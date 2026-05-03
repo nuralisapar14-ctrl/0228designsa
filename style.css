@@ -1,70 +1,130 @@
+/* --- ЦВЕТОВАЯ ПАЛИТРА --- */
 :root {
     --neon-red: #ff003c;
-    --neon-glow: rgba(255, 0, 60, 0.6);
     --dark-bg: #050505;
-    --card-bg: #111111;
+    --card-bg: #111111; 
+    --text-white: #ffffff;
 }
 
-body { margin: 0; background: var(--dark-bg); color: white; font-family: sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
-
-/* Исправление Hero.jpg */
-.hero { 
-    height: 90vh; 
-    background: url('hero.jpg') center/cover no-repeat; /* Убран fixed для лучшей совместимости */
-    position: relative; 
-}
-.hero-overlay { width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, var(--dark-bg)); display: flex; align-items: center; justify-content: center; }
-
-/* Центрирование Guide */
-.guide { 
-    padding: 80px 10%; 
-    display: flex; 
-    justify-content: center; /* Центр по горизонтали */
-    align-items: center;    /* Центр по вертикали */
-    gap: 30px; 
-    flex-wrap: wrap; 
-    text-align: center;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    /* Убрана любая анимация тряски */
 }
 
-/* Комикс */
-.comic-container { max-width: 900px; margin: 40px auto; line-height: 0; }
-.panel { margin-bottom: 80px; border-top: 2px solid var(--neon-red); border-bottom: 10px solid #111; }
-.panel img { width: 100%; display: block; }
+/* ФИКС HERO.JPG */
+.hero-section {
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    overflow: hidden;
+}
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--dark-bg));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-/* Инсайты (Message & Art) */
-.project-insight { padding: 100px 5%; background: #080808; }
-.insight-container { max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; }
-.insight-box { flex: 1; background: #111; padding: 40px; border-left: 5px solid var(--neon-red); border-radius: 10px; }
+/* СТИЛЬ КАРТОЧЕК (Message & Art) КАК НА ФОТО */
+.project-insight {
+    padding: 80px 5%;
+}
+.insight-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+}
+.insight-box {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px; 
+    border-left: 6px solid var(--neon-red);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+.insight-title {
+    color: var(--neon-red);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
 
-/* Увеличенный Action Plan */
-.action-plan { padding: 80px 5%; background: #0a0a0a; }
+/* УВЕЛИЧЕННЫЙ ACTION PLAN */
+.action-plan {
+    padding: 100px 5%;
+    background: #080808;
+    border-top: 1px solid #1a1a1a;
+}
 .ap-container { max-width: 1000px; margin: 0 auto; }
-.ap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 40px; }
-.ap-item { font-size: 1rem; color: #ccc; border-left: 3px solid var(--neon-red); padding-left: 20px; }
-.ap-num { color: var(--neon-red); font-weight: bold; font-size: 1.5rem; display: block; }
-
-/* Шапка и UI */
-.reader-header { position: fixed; top:0; width:100%; background: rgba(0,0,0,0.9); padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 2px solid var(--neon-red); box-sizing: border-box; }
-.risk-meter { position: fixed; left: 15px; top: 30%; height: 40%; width: 10px; background: #222; z-index: 1000; border: 1px solid #444; }
-.risk-fill { position: absolute; bottom: 0; width: 100%; background: red; box-shadow: 0 0 15px red; transition: height 0.3s; }
-
-/* Переключатель */
-.switch { position: relative; width: 40px; height: 20px; display: inline-block; }
-.switch input { opacity: 0; }
-.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #444; border-radius: 20px; transition: .4s; }
-.slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: .4s; }
-input:checked + .slider { background: red; }
-input:checked + .slider:before { transform: translateX(20px); }
-
-/* Ослабленная тряска */
-@keyframes shake { 
-    0% { transform: translate(1px, 0); }
-    50% { transform: translate(-1px, 0); }
-    100% { transform: translate(1px, 0); }
+.ap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+.ap-item {
+    font-size: 1.1rem;
+    border-left: 4px solid var(--neon-red);
+    padding-left: 20px;
+    color: #bbb;
+}
+.ap-num { 
+    color: var(--neon-red); 
+    font-weight: bold; 
+    font-size: 1.8rem; 
+    display: block;
+    margin-bottom: 10px;
 }
 
-/* Остальное */
-.authors-grid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; }
-.photo-frame { width: 150px; height: 150px; border-radius: 50%; border: 3px solid red; overflow: hidden; margin-bottom: 15px; }
-.photo-frame img { width: 100%; height: 100%; object-fit: cover; }
-.btn-main { background: red; color: white; border: none; padding: 15px 30px; cursor: pointer; font-weight: bold; }
+/* ШАПКА */
+.reader-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.95);
+    padding: 12px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 2px solid var(--neon-red);
+    box-sizing: border-box;
+}
+
+.logo {
+    font-weight: 900;
+    color: var(--neon-red);
+    letter-spacing: 2px;
+}
+
+/* TV EFFECT - БЕЗ ТРЯСКИ */
+.tv-effect {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+    background-size: 100% 4px, 4px 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.3;
+}
