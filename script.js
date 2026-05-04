@@ -44,3 +44,8 @@ function handleSurvey(ans) {
     document.querySelector('.survey-btns').style.display = 'none';
     document.getElementById('survey-thanks').style.display = 'block';
 }
+function submitPoll(vote) {
+    document.getElementById('poll-box').style.display = 'none';
+    document.getElementById('poll-thanks').style.display = 'block';
+    console.log("Poll vote:", vote); // Здесь можно настроить отправку данных
+}
