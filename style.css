@@ -506,3 +506,64 @@ input:checked + .slider:before {
         margin: 10px 0;
     }
 }
+.help-survey-mini {
+    padding: 30px 10px;
+    text-align: center;
+    background: #000;
+    border-top: 1px solid #222;
+}
+
+.neon-label {
+    color: var(--neon-red);
+    font-weight: 900;
+    font-size: 0.7rem;
+    margin-right: 10px;
+}
+
+.help-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-bottom: 1px dashed var(--neon-red);
+}
+
+.help-desc {
+    display: block;
+    font-size: 0.6rem;
+    color: #555;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+.mini-poll {
+    margin-top: 25px;
+}
+
+.mini-poll p {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.poll-btns button {
+    background: transparent;
+    border: 1px solid #444;
+    color: #888;
+    padding: 5px 15px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 5px;
+}
+
+.poll-btns button:hover {
+    border-color: var(--neon-red);
+    color: var(--neon-red);
+}
+
+#poll-thanks {
+    font-size: 0.7rem;
+    color: var(--neon-red);
+    margin-top: 15px;
+}
