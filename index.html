@@ -7,6 +7,59 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   <button id="open-dev-log" class="dev-log-btn">DEV LOG</button>
+
+<div id="dev-sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <h2>DEVELOPMENT PROCESS</h2>
+        <button id="close-dev-log">✕</button>
+    </div>
+
+    <div class="sidebar-content">
+        
+        <section class="dev-block">
+            <div class="stage-tag">ALPHA VERSION</div>
+            <div class="dev-photos">
+                <div class="photo-placeholder"><img src="alpha-1.jpg" alt="Alpha Screen 1"></div>
+                <div class="photo-placeholder"><img src="alpha-2.jpg" alt="Alpha Screen 2"></div>
+            </div>
+            <div class="dev-text">
+                <p><strong>Feedback:</strong> Спонсор предложил сфокусироваться на визуальном стиле и добавить интерактивности.</p>
+            </div>
+            <div class="dev-video">
+                <iframe src="https://www.youtube.com/embed/ТВОЙ_ID_1" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="dev-block">
+            <div class="stage-tag">BETA VERSION</div>
+            <div class="dev-photos">
+                <div class="photo-placeholder"><img src="beta-1.jpg" alt="Beta Screen 1"></div>
+                <div class="photo-placeholder"><img src="beta-2.jpg" alt="Beta Screen 2"></div>
+            </div>
+            <div class="dev-text">
+                <p><strong>Feedback:</strong> Тестирование пользователями показало, что нужно добавить счетчик страниц (1/16).</p>
+            </div>
+            <div class="dev-video">
+                <iframe src="https://www.youtube.com/embed/ТВОЙ_ID_2" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="dev-block">
+            <div class="stage-tag active">FINAL VERSION</div>
+            <div class="dev-photos">
+                <div class="photo-placeholder"><img src="final-1.jpg" alt="Final Screen 1"></div>
+                <div class="photo-placeholder"><img src="final-2.jpg" alt="Final Screen 2"></div>
+            </div>
+            <div class="dev-text">
+                <p>Итоговый продукт: 16 страниц, AI Mode, Риск-метр и полная адаптивность.</p>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<div id="sidebar-overlay" class="overlay"></div>
     <div class="tv-effect"></div> 
     <div class="risk-meter">      
         <div class="risk-fill" id="riskFill"></div>
