@@ -683,7 +683,6 @@ input:checked + .slider:before {
     z-index: 1500;
 }
 
-.overlay.active { display: block; }
 .improved-line {
     color: #fff;
     margin-top: 8px;
