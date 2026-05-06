@@ -49,3 +49,19 @@ function submitPoll(vote) {
     document.getElementById('poll-thanks').style.display = 'block';
     console.log("Poll vote:", vote); // Здесь можно настроить отправку данных
 }
+const openBtn = document.getElementById('open-dev-log');
+const closeBtn = document.getElementById('close-dev-log');
+const sidebar = document.getElementById('dev-sidebar');
+const overlay = document.getElementById('sidebar-overlay');
+
+openBtn.addEventListener('click', () => {
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+});
+
+[closeBtn, overlay].forEach(el => {
+    el.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+});
