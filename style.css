@@ -1,34 +1,48 @@
-/* --- ОСНОВНЫЕ ПЕРЕМЕННЫЕ И СБРОС --- */
+/* --- ОСНОВНЫЕ ПЕРЕМЕННЫЕ --- */
 :root {
     --neon-red: #ff0033;
     --neon-red-glow: rgba(255, 0, 51, 0.6);
-    --neon-green: #39ff14;
     --dark-bg: #050505;
     --card-bg: #0f0f0f;
     --text-gray: #b0b0b0;
-    --transition: 0.3s ease-in-out;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* --- ОБЩИЕ СТИЛИ --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--dark-bg);
     color: white;
     font-family: 'Courier New', Courier, monospace;
-    line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* --- HEADER И НАВИГАЦИЯ --- */
+/* Эффект старого ТВ (опционально) */
+.tv-effect {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    z-index: 5000;
+}
+
+/* --- ВЕРХНЯЯ ПАНЕЛЬ (HEADER) --- */
 .reader-header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.9);
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
@@ -41,6 +55,7 @@ body {
     font-weight: 900;
     letter-spacing: 2px;
     color: var(--neon-red);
+    text-shadow: 0 0 10px var(--neon-red);
 }
 
 .tag {
@@ -49,27 +64,61 @@ body {
     font-size: 0.6rem;
     padding: 2px 6px;
     margin-left: 10px;
-    vertical-align: middle;
 }
 
-/* --- PROGRESS BAR --- */
+/* Переключатель AI MODE */
+.ai-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ai-label { font-size: 0.7rem; color: var(--neon-red); font-weight: bold; }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #333;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px; width: 14px;
+    left: 3px; bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider { background-color: var(--neon-red); }
+input:checked + .slider:before { transform: translateX(20px); }
+
+/* --- ПРОГРЕСС И СЧЕТЧИК --- */
 .header-right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-#panel-counter {
-    font-size: 0.75rem;
-    margin-bottom: 4px;
-    color: var(--text-gray);
-}
+#panel-counter { font-size: 0.8rem; color: var(--text-gray); margin-bottom: 5px; }
 
 .bar-container {
     width: 150px;
     height: 4px;
     background: #222;
-    border-radius: 2px;
 }
 
 #progress-bar {
@@ -77,21 +126,39 @@ body {
     width: 0%;
     background: var(--neon-red);
     box-shadow: 0 0 10px var(--neon-red);
-    transition: width 0.3s ease;
+}
+
+/* --- RISK METER (Слева) --- */
+.risk-meter {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: #111;
+    z-index: 1001;
+}
+
+.risk-fill {
+    width: 100%;
+    height: 0%;
+    background: var(--neon-red);
+    box-shadow: 0 0 15px var(--neon-red);
+    transition: height 0.1s;
 }
 
 /* --- HERO SECTION --- */
 .hero {
     position: relative;
     height: 100vh;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .hero-overlay {
-    background: radial-gradient(circle, transparent 20%, var(--dark-bg) 90%);
+    background: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 100%;
     display: flex;
@@ -100,15 +167,17 @@ body {
     z-index: 1;
 }
 
+.hero-content { text-align: center; }
+
 .glitch-text {
     font-size: 4rem;
-    color: white;
-    text-shadow: 2px 2px var(--neon-red);
+    letter-spacing: 10px;
+    text-shadow: 3px 3px var(--neon-red);
     margin-bottom: 20px;
 }
 
 .btn-main, .btn-outline {
-    padding: 12px 24px;
+    padding: 15px 30px;
     margin: 10px;
     border: none;
     cursor: pointer;
@@ -118,45 +187,22 @@ body {
 }
 
 .btn-main { background: var(--neon-red); color: white; }
-.btn-main:hover { box-shadow: 0 0 20px var(--neon-red); }
+.btn-main:hover { box-shadow: 0 0 20px var(--neon-red); transform: scale(1.05); }
 
 .btn-outline { background: transparent; border: 1px solid white; color: white; }
 .btn-outline:hover { background: white; color: black; }
 
-/* --- COMIC CONTAINER --- */
-.comic-container {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 20px;
-}
-
-.panel {
-    width: 100%;
-    margin-bottom: 40px;
-    background: #111;
-    border: 1px solid #222;
-    overflow: hidden;
-}
-
-.panel img {
-    width: 100%;
-    display: block;
-}
-
-/* --- DEVELOPMENT SIDEBAR --- */
+/* --- SIDEBAR (DEV LOG) --- */
 .dev-log-btn {
     position: fixed;
-    left: -40px;
-    top: 50%;
-    transform: rotate(-90deg);
+    left: 20px; bottom: 20px;
     background: var(--neon-red);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     cursor: pointer;
-    z-index: 1100;
+    z-index: 2000;
     font-weight: bold;
-    letter-spacing: 1px;
 }
 
 .sidebar {
@@ -167,117 +213,117 @@ body {
     height: 100%;
     background: #0a0a0a;
     border-left: 2px solid var(--neon-red);
-    z-index: 1200;
-    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-    overflow-y: auto;
+    z-index: 3000;
+    transition: var(--transition);
     padding: 30px;
+    overflow-y: auto;
 }
 
 .sidebar.active { right: 0; }
 
-.sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.sidebar-content section { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #222; }
+
+.dev-info-container {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.label { font-size: 0.6rem; font-weight: bold; padding: 2px 5px; background: #333; margin-bottom: 5px; display: inline-block; }
+.label.imp { background: var(--neon-red); }
+
+.photo-placeholder img { width: 100%; margin-top: 10px; border: 1px solid #333; }
+
+/* --- COMIC CONTAINER --- */
+.comic-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.panel {
     margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-#close-dev-log {
-    background: transparent;
-    border: 1px solid #444;
-    color: white;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.dev-block {
-    margin-bottom: 50px;
-    background: #111;
-    padding: 15px;
-    border: 1px solid #222;
-}
-
-.stage-tag {
-    font-size: 0.7rem;
-    color: var(--text-gray);
-    border: 1px solid #444;
-    display: inline-block;
-    padding: 2px 8px;
-    margin-bottom: 15px;
-}
-
-.stage-tag.active { border-color: var(--neon-red); color: var(--neon-red); }
-
-.info-item { margin-bottom: 15px; }
-.label { font-size: 0.65rem; color: var(--text-gray); display: block; font-weight: bold; }
-.label.imp { color: var(--neon-green); }
-
-.dev-video iframe {
+.panel img {
     width: 100%;
-    height: 200px;
-    margin-top: 15px;
+    display: block;
+    transition: var(--transition);
 }
 
-/* --- REFLECTION & EVALUATION --- */
+/* --- EVALUATION & REFLECTION --- */
 .reflection-container {
     padding: 100px 20px;
     background: #000;
     border-top: 2px solid var(--neon-red);
 }
 
+.reflection-header { text-align: center; margin-bottom: 50px; }
+
+.neon-text {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 10px var(--neon-red);
+}
+
+.red-line { width: 60px; height: 4px; background: var(--neon-red); margin: 15px auto; }
+
 .reflection-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 0 auto;
 }
 
 .reflection-card {
     background: var(--card-bg);
     padding: 30px;
     border: 1px solid #222;
-    position: relative;
     transition: var(--transition);
 }
 
-.reflection-card:hover {
-    border-color: var(--neon-red);
-    box-shadow: 0 0 15px var(--neon-red-glow);
-}
+.reflection-card:hover { border-color: var(--neon-red); transform: translateY(-5px); }
 
-.question { color: var(--neon-red); margin-bottom: 15px; font-size: 1.1rem; }
-.answer { font-size: 0.9rem; color: var(--text-gray); }
+.reflection-card h3 { color: var(--neon-red); margin-bottom: 15px; font-size: 1rem; }
 
-/* --- TECH STACK --- */
+.reflection-card p, .tech-list li { font-size: 0.9rem; color: var(--text-gray); line-height: 1.6; }
+
 .tech-list { list-style: none; }
-.tech-list li {
-    margin-bottom: 12px;
-    padding-left: 15px;
-    border-left: 2px solid var(--neon-red);
+.tech-list li { margin-bottom: 8px; }
+.tech-list strong { color: #fff; }
+
+/* --- FOOTER & HELP --- */
+.help-survey-mini {
+    margin-top: 50px;
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #111;
 }
 
-/* --- РИСК-МЕТР --- */
-.risk-meter {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 4px;
-    background: #111;
-    z-index: 999;
+.help-link { color: var(--neon-red); text-decoration: none; font-weight: bold; font-size: 1.2rem; }
+
+.mini-poll { margin-top: 30px; }
+
+.poll-btns button {
+    background: transparent;
+    border: 1px solid #444;
+    color: white;
+    padding: 8px 20px;
+    margin: 5px;
+    cursor: pointer;
 }
 
-.risk-fill {
-    width: 100%;
-    height: 0%;
-    background: var(--neon-red);
-    box-shadow: 0 0 15px var(--neon-red);
-}
+.poll-btns button:hover { border-color: var(--neon-red); color: var(--neon-red); }
 
-/* --- АДАПТИВНОСТЬ --- */
+.final-footer { padding: 40px; text-align: center; font-size: 0.7rem; color: #444; }
+
+/* Адаптивность */
 @media (max-width: 768px) {
-    .sidebar { width: 100%; right: -100%; }
     .glitch-text { font-size: 2.5rem; }
-    .reflection-grid { grid-template-columns: 1fr; }
+    .sidebar { width: 100%; right: -100%; }
+    .reader-header { padding: 10px; }
+    .header-right { display: none; } /* Скрываем прогресс на мобилках для чистоты */
 }
