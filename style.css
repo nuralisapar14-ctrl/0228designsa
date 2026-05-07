@@ -696,3 +696,31 @@ input:checked + .slider:before {
     background: #000;
     min-height: 400px; /* Чтобы пустые блоки не схлопывались при загрузке */
 }
+.reflection-section {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px dashed #444;
+}
+
+.reflection-item {
+    margin-bottom: 20px;
+}
+
+.reflection-item .question {
+    color: var(--neon-red);
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.reflection-item .answer {
+    color: #eee;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    font-style: italic; /* Тонкий намек на личные мысли */
+    padding-left: 10px;
+    border-left: 1px solid #333;
+}
