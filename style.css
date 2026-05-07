@@ -1,20 +1,19 @@
-/* --- ПЕРЕМЕННЫЕ И ОСНОВА --- */
 :root {
     --neon-red: #ff0033;
-    --neon-glow: 0 0 15px rgba(255, 0, 51, 0.7);
     --dark-bg: #050505;
+    --card-bg: #111;
+    --neon-green: #39ff14;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
-    background: var(--dark-bg);
+    background-color: var(--dark-bg);
     color: white;
     font-family: 'Courier New', Courier, monospace;
+    margin: 0;
     overflow-x: hidden;
 }
 
-/* --- HERO SECTION (Как на твоем фото) --- */
+/* Hero Section */
 .hero {
     position: relative;
     height: 100vh;
@@ -22,114 +21,109 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url('hero.png') no-repeat center center/cover; /* Твое фоновое фото */
 }
 
 .hero-overlay {
-    background: rgba(0, 0, 0, 0.4); /* Затемнение для читаемости */
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column; justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.glitch-text {
-    font-size: clamp(2rem, 10vw, 5rem);
-    font-weight: 900;
-    letter-spacing: 5px;
-    text-shadow: 3px 3px var(--neon-red);
-    margin-bottom: 20px;
-}
-
-/* Кнопки как на макете */
-.btn-main {
-    background: var(--neon-red);
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 10px;
-    transition: 0.3s;
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-    padding: 15px 40px;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 10px;
-    transition: 0.3s;
-}
-
-.btn-main:hover { box-shadow: var(--neon-glow); transform: scale(1.05); }
-.btn-outline:hover { background: white; color: black; }
-
-/* --- SIDEBAR (DEVELOPMENT PROCESS) --- */
+/* Sidebar Styling */
 .sidebar {
     position: fixed;
-    right: -450px; /* Скрыт по умолчанию */
-    top: 0; width: 400px; height: 100%;
+    right: -400px;
+    top: 0;
+    width: 350px;
+    height: 100%;
     background: #0a0a0a;
     border-left: 2px solid var(--neon-red);
-    z-index: 2000;
-    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 25px;
+    z-index: 1000;
+    transition: 0.4s;
     overflow-y: auto;
+    padding: 20px;
 }
 
 .sidebar.active { right: 0; }
 
-.dev-info-container {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid #222;
-    padding: 15px; margin: 15px 0;
+.dev-block {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
 }
 
-.label {
-    display: inline-block; font-size: 0.6rem; font-weight: 900;
-    padding: 2px 6px; border-radius: 3px; margin-bottom: 5px;
-}
-.desc { background: #333; color: white; }
-.feed { background: #555; color: white; }
-.imp { background: var(--neon-red); color: white; }
-
-/* --- REFLECTION SECTION (Внизу сайта) --- */
-.reflection-container {
-    padding: 100px 20px;
-    border-top: 2px solid var(--neon-red);
-    max-width: 1200px; margin: 0 auto;
+.stage-tag {
+    background: #222;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    border: 1px solid #444;
 }
 
+.stage-tag.active { border-color: var(--neon-red); color: var(--neon-red); }
+
+.info-item { margin-bottom: 15px; }
+.label { font-weight: bold; font-size: 0.7rem; display: block; margin-bottom: 5px; opacity: 0.7; }
+.label.imp { color: var(--neon-green); }
+
+.photo-placeholder img { width: 100%; border-radius: 4px; margin-bottom: 10px; }
+
+/* Cards & Reflection */
+.reflection-container { padding: 80px 20px; background: #000; }
 .reflection-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .reflection-card {
-    background: #0f0f0f;
-    padding: 30px;
-    border-left: 4px solid var(--neon-red);
+    background: var(--card-bg);
+    padding: 25px;
+    border: 1px solid #222;
     transition: 0.3s;
 }
 
-.reflection-card:hover { background: #1a1a1a; transform: translateY(-5px); }
+.reflection-card:hover { border-color: var(--neon-red); transform: translateY(-5px); }
 
-.question { color: var(--neon-red); font-size: 1rem; margin-bottom: 10px; }
-.answer { color: #b0b0b0; font-size: 0.9rem; line-height: 1.6; }
+.neon-text { color: var(--neon-red); text-shadow: 0 0 10px var(--neon-red); }
 
-/* --- РИСК-МЕТР И UI --- */
-.risk-meter {
-    position: fixed; left: 0; top: 0;
-    width: 5px; height: 100%;
-    background: #222; z-index: 1500;
+/* Tech Stack List */
+.tech-list { list-style: none; padding: 0; }
+.tech-list li { margin-bottom: 10px; font-size: 0.9rem; }
+.tech-list strong { color: var(--neon-red); }
+
+/* Reader UI */
+.reader-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 900;
 }
-.risk-fill { width: 100%; height: 0%; background: var(--neon-red); box-shadow: var(--neon-glow); }
 
+#progress-bar { height: 4px; background: var(--neon-red); width: 0%; transition: 0.2s; }
+.bar-container { width: 100px; height: 4px; background: #222; margin-top: 5px; }
+
+/* Dev Log Button */
 .dev-log-btn {
-    position: fixed; left: 20px; bottom: 20px;
-    background: var(--neon-red); color: white;
-    border: none; padding: 12px 20px; cursor: pointer;
-    z-index: 1600; font-weight: bold;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background: var(--neon-red);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 999;
+    font-weight: bold;
 }
